@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans" class="loading">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>PostMan接口测试工具使用 - Wells Min</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="WellsMin,"> 
+    <meta name="description" content="注：菜鸟日记，记录学习所得的知识点及任务进度记录
+分享学习经验，记录小结
+本文参考各路大神文档笔记，记录学习
+
+PostMan接口工具的使用，比较方便的对项目中一些接口进行本地测试参与项目中能够通过,"> 
+    <meta name="author" content="Wells Min"> 
+    <link rel="alternative" href="atom.xml" title="Wells Min" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">Wells Min</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" data-url="http://yoursite.com"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">PostMan接口测试工具使用</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class="main">
+        <h1 class="title">PostMan接口测试工具使用</h1>
+        <div class="stuff">
+            <span>二月 26, 2019</span>
+            
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/PostMan/">PostMan</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/util/">util</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p><code>注：菜鸟日记，记录学习所得的知识点及任务进度记录</code></p>
+<p><code>分享学习经验，记录小结</code></p>
+<p><code>本文参考各路大神文档笔记，记录学习</code></p>
+<hr>
+<p><code>PostMan接口工具的使用，比较方便的对项目中一些接口进行本地测试</code><br><code>参与项目中能够通过http复制Header中信息参数，进行登陆后的接口测试，防止登陆拦截，特此记录</code></p>
+<h2 id="CSDN痴乙—PostMan使用方法详解"><a href="#CSDN痴乙—PostMan使用方法详解" class="headerlink" title="CSDN痴乙—PostMan使用方法详解"></a><a href="https://blog.csdn.net/fxbin123/article/details/80428216" target="_blank" rel="noopener">CSDN痴乙—PostMan使用方法详解</a></h2><ol>
+<li><p>PostMan背景介绍</p>
+<p> 用户在开发或者调试网络程序或者是网页B/S模式的程序的时候是需要一些方法来跟踪网页请求的，用户可以使用一些网络的监视工具比如著名的Firebug等网页调试工具。今天给大家介绍的这款网页调试工具不仅可以调试简单的css、html、脚本等简单的网页基本信息，它还可以发送几乎所有类型的HTTP请求！Postman在发送网络HTTP请求方面可以说是Chrome插件类产品中的代表产品之一。</p>
+</li>
+<li><p>PostMan操作环境</p>
+<p> PostMan适用于不同操作系统，PostMan Mac/Windows X32/Windows X64/Linux系统，还支持PostMan浏览器扩展程序、postman chrome应用程序等。</p>
+<p> <code>PostMan参考文档</code></p>
+<p> <a href="https://www.getpostman.com/docs/v6/" target="_blank" rel="noopener">【官方英文文档】</a></p>
+<p> <a href="http://chromecj.com/web-development/2017-12/870.html" target="_blank" rel="noopener">【postman中文使用教程-Chrome插件整理】</a></p>
+</li>
+<li><p>PostMan下载安装</p>
+<ul>
+<li><p><a href="https://www.getpostman.com/apps" target="_blank" rel="noopener">PostMan官网下载地址</a></p>
+</li>
+<li><p><a href="https://app.getpostman.com/app/download/osx64?utm_source=site&amp;utm_medium=apps&amp;utm_campaign=macapp&amp;_ga=2.21151352.2119858274.1527039878-1088353859.1527039878" target="_blank" rel="noopener">Postman for MAC</a></p>
+</li>
+<li><p><a href="https://app.getpostman.com/app/download/win64?_ga=2.201562513.1250696341.1530543681-1582181135.1530543681" target="_blank" rel="noopener">Postman for windows X64</a></p>
+</li>
+<li><p><a href="https://app.getpostman.com/app/download/win32?_ga=2.21151352.2119858274.1527039878-1088353859.1527039878" target="_blank" rel="noopener">Postman for windows X86</a></p>
+</li>
+<li><p><a href="https://app.getpostman.com/app/download/linux64?_ga=2.96050783.2119858274.1527039878-1088353859.1527039878" target="_blank" rel="noopener">Postman for linux X64</a></p>
+</li>
+<li><p><a href="https://app.getpostman.com/app/download/linux32?_ga=2.96050783.2119858274.1527039878-1088353859.1527039878" target="_blank" rel="noopener">Postman for Linux X86</a></p>
+</li>
+</ul>
+</li>
+<li><p>PostMan基本功能</p>
+<p> <img src="https://note.youdao.com/yws/api/personal/file/AFD11F3443A04F7BBFB701548A18101E?method=download&amp;shareKey=5af4e6efb8d451a6a58ee69fab0c8bc6" alt="avatar"></p>
+</li>
+<li><p>PostMan身份验证Authentication</p>
+<ul>
+<li><p>Basic Auth</p>
+<p>  是基础得验证，所以会比较简单,会直接把用户名，密码的信息放在请求的Header中(本项目所使用的就是该方法)</p>
+<ol>
+<li><p>连接服务器后通过修改Host文件连接其他项目服务</p>
+</li>
+<li><p>启动项目服务后进行登陆，登陆完成后不进行退出</p>
+</li>
+<li><p>启动本地项目，启动本地nginx，修改Host对应项目，跳转至本地</p>
+</li>
+<li><p>刷新页面进行接口访问测试，是否会被拦截，或是否跳转至本地服务</p>
+<p> <strong>问题</strong>：登陆后访问正常，但是访问的依旧是服务器项目，并不是本地，无法连接本地代码，通过Ping访问域名对应接收服务器为本机IP</p>
+<p> 出现该问题时刷新登陆后的服务首页，删除域名网址置灰链接单独重新访问域名，或在清除浏览器缓存后进行该操作</p>
+<p> 若还是无法访问本地，则关闭浏览器刷新session，将浏览器重新打开后访问域名。</p>
+<p> 可能存在项目中你本地所修改的服务模块信息不全无法登陆的情况(所以之前才需要进行Host修改)，本项目中直连本机偶尔出现登陆无法获取验证码以及登陆页面静态资源等问题</p>
+</li>
+</ol>
+</li>
+<li><p>Digest Auth</p>
+<p>  要比Basic Auth复杂，使用当前填写的值生成authorization header。所以在生成header之前要确保设置的正确性。如果当前的header已经存在，postman会移除之前的header。</p>
+</li>
+<li><p>OAuth 1.0</p>
+<p>  postman的OAuth helper让你签署支持OAuth</p>
+<p>  1.0基于身份验证的请求。OAuth不用获取access token,你需要去API提供者获取的。OAuth 1.0可以在header或者查询参数中设置value。</p>
+</li>
+<li><p>OAuth 2.0</p>
+<p>  postman支持获得OAuth 2.0 token并添加到requests中</p>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="Postman发送请求报Could-not-get-any-response"><a href="#Postman发送请求报Could-not-get-any-response" class="headerlink" title="Postman发送请求报Could not get any response"></a>Postman发送请求报Could not get any response</h3><ul>
+<li><p>路径参数什么都是对的，还是报这个错误</p>
+</li>
+<li><p>需要看看是否传参的方式是否正确</p>
+</li>
+<li><p>将页面请求中Header需要填写正确之后访问才能够正常，否则报错或被拦截</p>
+</li>
+<li><p>确保接口路径填写正确</p>
+</li>
+<li><p>确保传参格式正确</p>
+</li>
+</ul>
+<h3 id="常用的post、get、put这几个请求方式有什么不同"><a href="#常用的post、get、put这几个请求方式有什么不同" class="headerlink" title="常用的post、get、put这几个请求方式有什么不同"></a>常用的post、get、put这几个请求方式有什么不同</h3><ul>
+<li><p>请求方式 释义 举例</p>
+<p>  Get    GET 方法用来请求访问已被 URI 识别的资源。指定的资源经服务器端解析后返回响应内容    相当于“查看”，比如告诉服务端想查看某个主页内容，服务端就返回给你</p>
+<p>  post 传输实体的主体    客户端：“我要把这条信息传给你”-&gt;服务端</p>
+<p>  PUT 方法用来传输文件。就像 FTP 协议的文件上传一样，要求在请求报文的主体中包含文件内容，然后保存到请求 URI 指定的位置 客户端：“我要把这份文件传给你” -&gt;服务端</p>
+</li>
+<li><p>HTTP协议传输返回的状态码分别代表什么意思</p>
+<p>  有时候，接口会返回500错误，或者400,我们需要知道分别代表的什么意思</p>
+<p>  1XX Informational（信息性状态码） 接收的请求正在处理</p>
+<p>  2XX Success（成功状态码） 请求正常处理完毕</p>
+<p>  3XX Redirection（重定向状态码） 需要进行附加操作以完成请求</p>
+<p>  4XX Client Error（客户端错误状态码） 服务器无法处理请求</p>
+<p>  5XX Server Error（服务器错误状态码） 服务器处理请求出错</p>
+</li>
+</ul>
+<h3 id="Collection-运行步骤（压力）"><a href="#Collection-运行步骤（压力）" class="headerlink" title="Collection 运行步骤（压力）"></a>Collection 运行步骤（压力）</h3><ol>
+<li><p>选择collection，点击左上角runner，进入collection runner页面</p>
+</li>
+<li><p>Collection Runner页面选择要运行的Collection，设置迭代次数，间隔时间，点击Start Test进行测试</p>
+</li>
+<li><p>运行结束后，查看测试结果，显示pass数量，fail数量。</p>
+</li>
+</ol>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src>
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        <li title="0" data-url="http://link.hhtjim.com/163/5146554.mp3"></li>
+                    
+                        <li title="1" data-url="http://link.hhtjim.com/qq/001faIUs4M2zna.mp3"></li>
+                    
+                </ul>
+            
+        </div>
+        
+    <div id="gitalk-container" class="comment link" data-ae="false" data-ci data-cs data-r data-o data-a data-d="false">查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>

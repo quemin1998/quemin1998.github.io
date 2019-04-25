@@ -1,0 +1,413 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans" class="loading">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>accept文件上传指定文件格式参数设置 - Wells Min</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="WellsMin,"> 
+    <meta name="description" content="
+accept属性过滤指定文件12表单上传控件：&amp;lt;input type=&amp;quot;file&amp;quot; /&amp;gt;（IE9及以下不支持下面功能，其它浏览器最新版本均支持）
+
+
+1、允许上传文,"> 
+    <meta name="author" content="Wells Min"> 
+    <link rel="alternative" href="atom.xml" title="Wells Min" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">Wells Min</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" data-url="http://yoursite.com"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">accept文件上传指定文件格式参数设置</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class="main">
+        <h1 class="title">accept文件上传指定文件格式参数设置</h1>
+        <div class="stuff">
+            <span>十月 20, 2018</span>
+            
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/文件上传-accept/">文件上传 accept</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <ul>
+<li><h2 id="accept属性过滤指定文件"><a href="#accept属性过滤指定文件" class="headerlink" title="accept属性过滤指定文件"></a><a href>accept属性过滤指定文件</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">表单上传控件：&lt;input type=&quot;file&quot; /&gt;</span><br><span class="line">（IE9及以下不支持下面功能，其它浏览器最新版本均支持）</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="1、允许上传文件数量"><a href="#1、允许上传文件数量" class="headerlink" title="1、允许上传文件数量"></a>1、允许上传文件数量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">只允许选择一个文件：&lt;input  type=&quot;file&quot; single&gt;</span><br><span class="line">允许选择多个文件  ：&lt;input type=&quot;file&quot; multiple&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="2、上传文件数组FileList"><a href="#2、上传文件数组FileList" class="headerlink" title="2、上传文件数组FileList"></a>2、上传文件数组FileList</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">FileList对象都是一组文件对象的集合，而文件对象则拥有下列的属性：</span><br><span class="line"></span><br><span class="line">name – 文件名（不包含路径）</span><br><span class="line"></span><br><span class="line">type – 文件的MIME类型（小写）</span><br><span class="line"></span><br><span class="line">size – 文件的尺寸（单位为字节）</span><br><span class="line"></span><br><span class="line">lastModifiedDate 为上传文件的最后修改时间</span><br></pre></td></tr></table></figure>
+<p>通过上面的几个对象，我们能够控制用户上传的文件大小和文件类型，以便减轻服务器再次检测的压力，并提升安全系数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var a=document.getElementById(&quot;file&quot;);</span><br><span class="line">a.onchange=function(e)&#123;</span><br><span class="line">    e=e || window.event;</span><br><span class="line">    var b=e.target.files;</span><br><span class="line">    alert(b[0].name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="3、上传文件指定格式"><a href="#3、上传文件指定格式" class="headerlink" title="3、上传文件指定格式"></a>3、上传文件指定格式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;file&quot; accept=&quot;image/gif,image/png&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<p>上传格式仅指打开上传弹窗选择文件时默认的文件格式，可手动修改成其它文件格式。</p>
+<p>如果不限制上传图片的格式可写成：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">accept=&quot;image/*&quot;</span><br></pre></td></tr></table></figure></p>
+<p>其他格式如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">显示xlsx表格文件</span><br><span class="line">application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</span><br><span class="line">显示docx文档文件</span><br><span class="line">application/vnd.openxmlformats-officedocument.wordprocessingml.document</span><br></pre></td></tr></table></figure></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">文件后缀</th>
+<th style="text-align:center">格式1</th>
+<th style="text-align:center">格式2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">*.3gpp</td>
+<td style="text-align:center">audio/3gpp, video/3gpp</td>
+<td style="text-align:center">3GPP Audio/Video</td>
+</tr>
+<tr>
+<td style="text-align:center">*.ac3</td>
+<td style="text-align:center">audio/ac3</td>
+<td style="text-align:center">AC3 Audio</td>
+</tr>
+<tr>
+<td style="text-align:center">*.asf</td>
+<td style="text-align:center">allpication/vnd.ms-asf</td>
+<td style="text-align:center">Advanced Streaming Format</td>
+</tr>
+<tr>
+<td style="text-align:center">*.au</td>
+<td style="text-align:center">audio/basic</td>
+<td style="text-align:center">AU Audio</td>
+</tr>
+<tr>
+<td style="text-align:center">*.css</td>
+<td style="text-align:center">text/css</td>
+<td style="text-align:center">Cascading Style Sheets</td>
+</tr>
+<tr>
+<td style="text-align:center">*.csv</td>
+<td style="text-align:center">text/csv</td>
+<td style="text-align:center">Comma Separated Values</td>
+</tr>
+<tr>
+<td style="text-align:center">*.doc</td>
+<td style="text-align:center">application/msword</td>
+<td style="text-align:center">MS Word Document</td>
+</tr>
+<tr>
+<td style="text-align:center">*.dot</td>
+<td style="text-align:center">application/msword</td>
+<td style="text-align:center">MS Word Template</td>
+</tr>
+<tr>
+<td style="text-align:center">*.dtd</td>
+<td style="text-align:center">application/xml-dtd</td>
+<td style="text-align:center">Document Type Definition</td>
+</tr>
+<tr>
+<td style="text-align:center">*.dwg</td>
+<td style="text-align:center">image/vnd.dwg</td>
+<td style="text-align:center">AutoCAD Drawing Database</td>
+</tr>
+<tr>
+<td style="text-align:center">*.dxf</td>
+<td style="text-align:center">image/vnd.dxf</td>
+<td style="text-align:center">AutoCAD Drawing Interchange Format</td>
+</tr>
+<tr>
+<td style="text-align:center">*.gif</td>
+<td style="text-align:center">image/gif</td>
+<td style="text-align:center">Graphic Interchange Format</td>
+</tr>
+<tr>
+<td style="text-align:center">*.htm</td>
+<td style="text-align:center">text/html</td>
+<td style="text-align:center">HyperText Markup Language</td>
+</tr>
+<tr>
+<td style="text-align:center">*.html</td>
+<td style="text-align:center">text/html</td>
+<td style="text-align:center">HyperText Markup Language</td>
+</tr>
+<tr>
+<td style="text-align:center">*.jp2</td>
+<td style="text-align:center">image/jp2</td>
+<td style="text-align:center">JPEG-2000</td>
+</tr>
+<tr>
+<td style="text-align:center">*.jpe</td>
+<td style="text-align:center">image/jpeg</td>
+<td style="text-align:center">JPEG</td>
+</tr>
+<tr>
+<td style="text-align:center">*.jpeg</td>
+<td style="text-align:center">image/jpeg</td>
+<td style="text-align:center">JPEG</td>
+</tr>
+<tr>
+<td style="text-align:center">*.jpg</td>
+<td style="text-align:center">image/jpeg</td>
+<td style="text-align:center">JPEG</td>
+</tr>
+<tr>
+<td style="text-align:center">*.js</td>
+<td style="text-align:center">text/javascript, application/javascript</td>
+<td style="text-align:center">JavaScript</td>
+</tr>
+<tr>
+<td style="text-align:center">*.json</td>
+<td style="text-align:center">application/json</td>
+<td style="text-align:center">JavaScript Object Notation</td>
+</tr>
+<tr>
+<td style="text-align:center">*.mp2</td>
+<td style="text-align:center">audio/mpeg, video/mpeg</td>
+<td style="text-align:center">MPEG Audio/Video Stream, Layer II</td>
+</tr>
+<tr>
+<td style="text-align:center">*.mp3</td>
+<td style="text-align:center">audio/mpeg</td>
+<td style="text-align:center">MPEG Audio Stream, Layer III</td>
+</tr>
+<tr>
+<td style="text-align:center">*.mp4</td>
+<td style="text-align:center">audio/mp4, video/mp4</td>
+<td style="text-align:center">MPEG-4 Audio/Video</td>
+</tr>
+<tr>
+<td style="text-align:center">*.mpeg</td>
+<td style="text-align:center">video/mpeg</td>
+<td style="text-align:center">MPEG Video Stream, Layer II</td>
+</tr>
+<tr>
+<td style="text-align:center">*.mpg</td>
+<td style="text-align:center">video/mpeg</td>
+<td style="text-align:center">MPEG Video Stream, Layer II</td>
+</tr>
+<tr>
+<td style="text-align:center">*.mpp</td>
+<td style="text-align:center">application/vnd.ms-project</td>
+<td style="text-align:center">MS Project Project</td>
+</tr>
+<tr>
+<td style="text-align:center">*.ogg</td>
+<td style="text-align:center">application/ogg, audio/ogg</td>
+<td style="text-align:center">Ogg Vorbis</td>
+</tr>
+<tr>
+<td style="text-align:center">*.pdf</td>
+<td style="text-align:center">application/pdf</td>
+<td style="text-align:center">Portable Document Format</td>
+</tr>
+<tr>
+<td style="text-align:center">*.png</td>
+<td style="text-align:center">image/png</td>
+<td style="text-align:center">Portable Network Graphics</td>
+</tr>
+<tr>
+<td style="text-align:center">*.pot</td>
+<td style="text-align:center">application/vnd.ms-powerpoint</td>
+<td style="text-align:center">MS PowerPoint Template</td>
+</tr>
+<tr>
+<td style="text-align:center">*.pps</td>
+<td style="text-align:center">application/vnd.ms-powerpoint</td>
+<td style="text-align:center">MS PowerPoint Slideshow</td>
+</tr>
+<tr>
+<td style="text-align:center">*.ppt</td>
+<td style="text-align:center">application/vnd.ms-powerpoint</td>
+<td style="text-align:center">MS PowerPoint Presentation</td>
+</tr>
+<tr>
+<td style="text-align:center">*.rtf</td>
+<td style="text-align:center">application/rtf, text/rtf</td>
+<td style="text-align:center">Rich Text Format</td>
+</tr>
+<tr>
+<td style="text-align:center">*.svf</td>
+<td style="text-align:center">image/vnd.svf</td>
+<td style="text-align:center">Simple Vector Format</td>
+</tr>
+<tr>
+<td style="text-align:center">*.tif</td>
+<td style="text-align:center">image/tiff</td>
+<td style="text-align:center">Tagged Image Format File</td>
+</tr>
+<tr>
+<td style="text-align:center">*.tiff</td>
+<td style="text-align:center">image/tiff</td>
+<td style="text-align:center">Tagged Image Format File</td>
+</tr>
+<tr>
+<td style="text-align:center">*.txt</td>
+<td style="text-align:center">text/plain</td>
+<td style="text-align:center">Plain Text</td>
+</tr>
+<tr>
+<td style="text-align:center">*.wdb</td>
+<td style="text-align:center">application/vnd.ms-works</td>
+<td style="text-align:center">MS Works Database</td>
+</tr>
+<tr>
+<td style="text-align:center">*.wps</td>
+<td style="text-align:center">application/vnd.ms-works</td>
+<td style="text-align:center">Works Text Document</td>
+</tr>
+<tr>
+<td style="text-align:center">*.xhtml</td>
+<td style="text-align:center">application/xhtml+xml</td>
+<td style="text-align:center">Extensible HyperText Markup Language</td>
+</tr>
+<tr>
+<td style="text-align:center">*.xlc</td>
+<td style="text-align:center">application/vnd.ms-excel</td>
+<td style="text-align:center">MS Excel Chart</td>
+</tr>
+<tr>
+<td style="text-align:center">*.xlm</td>
+<td style="text-align:center">application/vnd.ms-excel</td>
+<td style="text-align:center">MS Excel Macro</td>
+</tr>
+<tr>
+<td style="text-align:center">*.xls</td>
+<td style="text-align:center">application/vnd.ms-excel</td>
+<td style="text-align:center">MS Excel Spreadsheet</td>
+</tr>
+<tr>
+<td style="text-align:center">*.xlt</td>
+<td style="text-align:center">application/vnd.ms-excel</td>
+<td style="text-align:center">MS Excel Template</td>
+</tr>
+<tr>
+<td style="text-align:center">*.xlw</td>
+<td style="text-align:center">application/vnd.ms-excel</td>
+<td style="text-align:center">MS Excel Workspace</td>
+</tr>
+<tr>
+<td style="text-align:center">*.xml</td>
+<td style="text-align:center">text/xml, application/xml</td>
+<td style="text-align:center">Extensible Markup Language</td>
+</tr>
+<tr>
+<td style="text-align:center">*.zip</td>
+<td style="text-align:center">aplication/zip</td>
+<td style="text-align:center">Compressed Archive</td>
+</tr>
+</tbody>
+</table>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src>
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        <li title="0" data-url="http://link.hhtjim.com/163/5146554.mp3"></li>
+                    
+                        <li title="1" data-url="http://link.hhtjim.com/qq/001faIUs4M2zna.mp3"></li>
+                    
+                </ul>
+            
+        </div>
+        
+    <div id="gitalk-container" class="comment link" data-ae="false" data-ci data-cs data-r data-o data-a data-d="false">查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>

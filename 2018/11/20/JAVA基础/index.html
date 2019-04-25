@@ -1,0 +1,347 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans" class="loading">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>JAVA基础 - Wells Min</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="WellsMin,"> 
+    <meta name="description" content="注：
+笔者主要是用于记录JAVA基础知识要点，便于回顾
+很多基础知识笔者会直接引用一些大神的博客和网上的一些资料
+因为大部分内容源自网上收集，可能会存有一些疑问，请读者见谅
+JAVA知识回顾Java,"> 
+    <meta name="author" content="Wells Min"> 
+    <link rel="alternative" href="atom.xml" title="Wells Min" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">Wells Min</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" data-url="http://yoursite.com"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">JAVA基础</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class="main">
+        <h1 class="title">JAVA基础</h1>
+        <div class="stuff">
+            <span>十一月 20, 2018</span>
+            
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/JAVA/">JAVA</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p><code>注：</code></p>
+<p><code>笔者主要是用于记录JAVA基础知识要点，便于回顾</code></p>
+<p><code>很多基础知识笔者会直接引用一些大神的博客和网上的一些资料</code></p>
+<p><code>因为大部分内容源自网上收集，可能会存有一些疑问，请读者见谅</code></p>
+<h3 id="JAVA知识回顾"><a href="#JAVA知识回顾" class="headerlink" title="JAVA知识回顾"></a>JAVA知识回顾</h3><p>Java是一门面向对象编程语言，吸收了C/C++的优点，摒弃了C/C++复杂的指针等内容，也不需要用户手动释放内存空间。</p>
+<p>Java本身还具备了很强的可移植性，通过将源代码编译成二进制字节码，然后通过不同平台的Java虚拟机来解释执行字节码，从而实行了“一次编译，到处执行”的跨平台特性。<br>Java的应用领域非常广泛。可以做应用系统、互联网网站、以及移动端的安卓等</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">JAVA特性：</span><br><span class="line">    简单，健壮，安全，动态，面向对象</span><br><span class="line">    体系结构中立，分布式，可移植，高性能，多线程</span><br><span class="line">    解释型语言</span><br></pre></td></tr></table></figure>
+<p>术语：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">JRE（Java Runtime Environment）：运行Java程序的用户使用的软件，包含了java虚拟机却不包含编译器。</span><br><span class="line"></span><br><span class="line">JDK（Java Development Kit）：编写java程序的程序员所使用的开发工具包，JDK里包含了JRE。</span><br><span class="line"></span><br><span class="line">Server JRE ：在服务器上运行java环境的软件</span><br><span class="line"></span><br><span class="line">SE （Standard Edition）：用于桌面或简单服务器应用的java平台。（我们现在正在学习的）</span><br><span class="line"></span><br><span class="line">EE（Enterprise Edition）：用于复杂服务器应用的java平台。</span><br><span class="line"></span><br><span class="line">ME（Micro Edition）： 用于手机和其他小型设备的java平台。</span><br><span class="line"></span><br><span class="line">J2（Java 2）：一个过时的术语，用于描述1998~2006之间的java版本。</span><br><span class="line"></span><br><span class="line">SDK（Software Development kit）：一个过时的术语，用于描述1998~2006之间的JDK。</span><br><span class="line"></span><br><span class="line">DAO（Data Access Object）：数据访问接口，数据访问，顾名思义就是与数据库打交道</span><br><span class="line"></span><br><span class="line">MVC（Model View Controller）：模型(model)－视图(view)－控制器(controller)</span><br><span class="line">一种软件设计典范，用于组织代码用一种业务逻辑和数据显示分离的方法</span><br></pre></td></tr></table></figure></p>
+<h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><hr>
+<h4 id="1、JVM、JRE、JDK之间的区别"><a href="#1、JVM、JRE、JDK之间的区别" class="headerlink" title="1、JVM、JRE、JDK之间的区别"></a>1、JVM、JRE、JDK之间的区别</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">JVM(Java Virtual Machine):java虚拟机，用于保证java的跨平台的特性。</span><br><span class="line">    java语言是跨平台的，jvm并不是跨平台的</span><br><span class="line">JRE(Java Runtime Environment):java的运行环境,包括jvm+java的核心类库。	</span><br><span class="line">JDK(Java Development Kit):java的开发工具,包括jre+开发工具</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="2、环境变量path和classpath的作用"><a href="#2、环境变量path和classpath的作用" class="headerlink" title="2、环境变量path和classpath的作用"></a>2、环境变量path和classpath的作用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(1)path是配置Windows可执行文件的搜索路径，即扩展名为、exe的程序文件所在的目录，用于指定DOS窗口命令的路径。</span><br><span class="line">(2)Classpath是配置class文件所在的目录，用于指定类搜索路径，JVM就是通过它来寻找该类的class类文件的。</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>java环境配置教程：<a href="http://www.runoob.com/java/java-environment-setup.html" target="_blank" rel="noopener">window</a>、<a href="https://jingyan.baidu.com/article/0964eca26917b18285f53616.html" target="_blank" rel="noopener">Linux</a>、<a href="https://jingyan.baidu.com/article/908080221f3cfefd91c80fbf.html" target="_blank" rel="noopener">Mac</a>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">配置环境时都会遇到一些莫名的问题，大部分都是因为jdk的路径问题引起。</span><br><span class="line">所以大家配置环境的一定不能照搬教程里的路径，要根据自己电脑里的jdk路径来配置。</span><br><span class="line">如果配置环境出现问题，这时候可以根据报错信息等百度看下原因。</span><br><span class="line">实在不行，可以 根据教程“重新配置环境”，这个方法可以解决大部分问题。</span><br><span class="line">(eclipse 不能正常运行也可以试试卸载重装。。)</span><br><span class="line">其次也可能和jdk的版本及eclipe版本有关</span><br><span class="line">下载的时候一定要根据你所使用的系统的版本来选择jdk版本和eclipse的版本.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><a href="https://jingyan.baidu.com/article/ed2a5d1f8b3c8f09f7be174c.html" target="_blank" rel="noopener">Eclipse工具安装使用教程</a></p>
+</li>
+</ul>
+<hr>
+<h4 id="3、变量的作用，为什么要定义变量"><a href="#3、变量的作用，为什么要定义变量" class="headerlink" title="3、变量的作用，为什么要定义变量"></a>3、变量的作用，为什么要定义变量</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">why：是为了用来不断地存放同一类型的常量，并可以重复使用</span><br><span class="line">effect：变量的作用就是用来存储数据的</span><br><span class="line"></span><br><span class="line">局部变量:</span><br><span class="line">    存在于栈内存的方法中，生命周期伴随所属区域始终，使用前必须先声明和初始化;</span><br><span class="line"></span><br><span class="line">成员变量(实例变量):</span><br><span class="line">    存在于堆内存的对象中，从属对象，生命周期伴随对象始终，自动初始化、有默认初始值</span><br><span class="line"></span><br><span class="line">静态变量(类变量):</span><br><span class="line">    存在于方法区，用static修饰，从属类，生命周期伴随类始终，自动初始化、有默认初始值</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="4、-amp-和-amp-amp-的区别"><a href="#4、-amp-和-amp-amp-的区别" class="headerlink" title="4、&amp;和&amp;&amp;的区别"></a>4、&amp;和&amp;&amp;的区别</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(1)&amp;&amp;会出现短路，如果可以通过第一个表达式判断出整个表达式的结果，则不继续后面表达式的运算；</span><br><span class="line">只能操作boolean类型数据；</span><br><span class="line">(2)&amp;不会出现短路，将整个表达式都运算。既可以操作boolean数据还可以操作数。</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="5、标示符的命名规则"><a href="#5、标示符的命名规则" class="headerlink" title="5、标示符的命名规则"></a>5、标示符的命名规则</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">由数字(0-9)，大小写英文字母，以及_和$组成。</span><br><span class="line">Java 标识符大小写敏感，长度无限制</span><br><span class="line">不能是 Java 中的关键字;</span><br><span class="line"></span><br><span class="line">变量要首字母小写和驼峰原则;</span><br><span class="line">常量的单词字母要全部大写，若有两个以上的单词组成，就用下划线&quot;_&quot;进行连接;</span><br><span class="line">类名要首字母大写和驼峰原则;</span><br><span class="line">方法名要首字母小写和驼峰原则，如toShow();</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="6、数据类型"><a href="#6、数据类型" class="headerlink" title="6、数据类型"></a>6、数据类型</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">(1)基本数据类型(4类8种)：</span><br><span class="line">整数类型：byte、short、int、long</span><br><span class="line">浮点数类型：float、double</span><br><span class="line">字符类型：char</span><br><span class="line">布尔类型：boolean(ture false)</span><br><span class="line">(2)引用数据类型：</span><br><span class="line">类    接口    数组</span><br><span class="line">大小统一是4字节，记录的是其引用对象的地址</span><br><span class="line"></span><br><span class="line">补充：</span><br><span class="line">转义字符：\n换行      \r回车   \f换页   \’引号         \\反斜杠号</span><br></pre></td></tr></table></figure>
+<ul>
+<li>注：<br>实际上还有一种基本数据类型：void，其对应的包装类是：java.lang.Void;</li>
+</ul>
+<p>Java 中方法调用传递参数时，基本数据类型传递的是该数据值本身，引用数据类型传递的是对对象的引用地址，而不是对象本身;<br>Java 中只有值传递！</p>
+<p>补充：String不是基本类型,是标准java类库中的一个预定类，两个String相加效果为字符串拼接</p>
+<hr>
+<h4 id="7、类型转换"><a href="#7、类型转换" class="headerlink" title="7、类型转换"></a>7、类型转换</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">精度从高到低 double float long int short(char) byte </span><br><span class="line">(1)自动类型转换 将一个低精度---&gt;高精度 </span><br><span class="line">(2)强制类型转换 将一个高精度---&gt;低精度(精度会下降)</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="8、java语言的三种技术架构"><a href="#8、java语言的三种技术架构" class="headerlink" title="8、java语言的三种技术架构"></a>8、java语言的三种技术架构</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">J2EE：企业版：</span><br><span class="line"></span><br><span class="line">是为开发企业环境下的应用程序提供的一套解决方案。</span><br><span class="line">该技术体系中包含的技术如 Servlet、Jsp等，主要针对于Web应用程序开发。</span><br><span class="line"></span><br><span class="line">J2SE：标准版：</span><br><span class="line"></span><br><span class="line">是为开发普通桌面和商务应用程序提供的解决方案。</span><br><span class="line">该技术体系是其他两者的基础，可以完成一些桌面应用程序的开发。</span><br><span class="line">比如Java版的扫雷。</span><br><span class="line"></span><br><span class="line">J2ME：小型版：</span><br><span class="line"></span><br><span class="line">是为开发电子消费产品和嵌入式设备提供的解决方案。</span><br><span class="line">该技术体系主要应用于小型电子消费类产品，如手机中的应用程序等。</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="9、Java的跨平台性"><a href="#9、Java的跨平台性" class="headerlink" title="9、Java的跨平台性"></a>9、Java的跨平台性</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">    通过java语言编写的程序在不同的系统平台上都可以运行</span><br><span class="line">原因：</span><br><span class="line">    只要在需要运行java程序的系统环境中安装一个java虚拟机</span><br><span class="line">    (JVM Java Virtual Machine)即可，由JVM来负责Java程序在系统上的运行</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="10、有符号数据的表示法"><a href="#10、有符号数据的表示法" class="headerlink" title="10、有符号数据的表示法"></a>10、有符号数据的表示法</h4><p>原码，反码(原码取反)，补码(反码+1)。—-待补充学习</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center">十进制数</th>
+<th style="text-align:center">原码</th>
+<th style="text-align:center">反码</th>
+<th style="text-align:center">补码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">85</td>
+<td style="text-align:center">0101 0101</td>
+<td style="text-align:center">0101 0101</td>
+<td style="text-align:center">0101 0101</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">-85</td>
+<td style="text-align:center">1101 0101</td>
+<td style="text-align:center">1010 1010</td>
+<td style="text-align:center">1010 1011</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">9</td>
+<td style="text-align:center">0000 1001</td>
+<td style="text-align:center">0000 1001</td>
+<td style="text-align:center">0000 1001</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">-9</td>
+<td style="text-align:center">1000 1001</td>
+<td style="text-align:center">1111 0110</td>
+<td style="text-align:center">1111 0111</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>原码就是符号位加上真值的绝对值， 即用第一位表示符号， 其余位表示值</li>
+<li>反码的表示方法是:正数的反码是其本身；负数的反码是在其原码的基础上， 符号位不变，其余各个位取反。</li>
+<li>补码的表示方法是:正数的补码就是其本身；</li>
+<li>负数的补码是在其原码的基础上， 符号位不变， 其余各位取反， 最后+1。 就是在反码的基础上+1</li>
+</ul>
+<ul>
+<li>文档：<a href="https://www.cnblogs.com/zhangziqiu/archive/2011/03/30/ComputerCode.html" target="_blank" rel="noopener">源码，补码，反码</a></li>
+</ul>
+<hr>
+<h4 id="11、函数"><a href="#11、函数" class="headerlink" title="11、函数"></a>11、函数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">定义：</span><br><span class="line">    函数就是定义在类中的具有特定功能的一段独立小程序。	</span><br><span class="line">特点：</span><br><span class="line">    定义函数可以将功能代码进行封装</span><br><span class="line">    便于对该功能进行复用</span><br><span class="line">    函数只有被调用才会被执行</span><br><span class="line">    函数的出现提高了代码的复用性</span><br><span class="line">    对于函数没有具体返回值的情况，返回值类型用关键字void表示，</span><br><span class="line">    那么该函数中的return语句如果在最后一行可以省略不写。</span><br><span class="line">    函数的应用两个明确：</span><br><span class="line">    明确要定义的功能最后的结果是什么？</span><br><span class="line">    明确在定义该功能的过程中，是否需要未知内容参与运算</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="12、重载："><a href="#12、重载：" class="headerlink" title="12、重载："></a>12、重载：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">概念：在同一个类中，允许存在一个以上的同名函数，只要它们的参数个数或者参数类型不同即可。	</span><br><span class="line">特点：与返回值类型无关，只看参数列表(参数类型以及参数个数)。	</span><br><span class="line">好处：方便于阅读，优化了程序设计。</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="13、内存结构"><a href="#13、内存结构" class="headerlink" title="13、内存结构"></a>13、内存结构</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">栈内存：用于存储局部变量，当数据使用完，所占空间会自动释放。</span><br><span class="line">堆内存：数组和对象，通过new建立的实例都存放在堆内存中。</span><br><span class="line">方法区：静态成员、构造函数、常量池、线程池</span><br><span class="line">本地方法区：window系统占用</span><br><span class="line">寄存器：</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="14、数组"><a href="#14、数组" class="headerlink" title="14、数组"></a>14、数组</h4><p>数组是相同类型数据的集合。它的长度固定，一旦创建完成后长度是不可改变的。</p>
+<p>Java允许创建任何类型的数组，而数组的大小是int型变量，其值是非负数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">数组初始化</span><br><span class="line">    静态初始化：初始化时由程序员显式指定每个数组元素的初始值，由系统决定数组长度。</span><br><span class="line">    动态初始化：初始化时程序员只指定数组长度，由系统为数组元素分配初始值。</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">    赋值与复制</span><br><span class="line">        赋值（必须是类型相同的）：可以让多个数组变量指向同一个数组。</span><br><span class="line">            int[ ]arrs=arr;</span><br><span class="line">        复制：通过clone()方法，其实新建了一个数组</span><br><span class="line">            int[ ] cloneArr=(int[ ])arr.clone( );</span><br><span class="line">       </span><br><span class="line">注意：当数组类型是类（非基本数据类型）时，调用clone( )方法，复制的是数组的内容即引用，并没有复制引用指向的对象</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">    排序</span><br><span class="line">选择排序法：从头角标对应的元素开始，和每个元素进行一次比较。第一次内循环后，最值出现在头角标位置</span><br><span class="line">for (int x=0;x&lt;arr.length-1 ; x++)&#123;</span><br><span class="line"></span><br><span class="line">   for(int y=x+1; y&lt;arr.length; y++)&#123;</span><br><span class="line"></span><br><span class="line">       if(arr[x]&gt;arr[y])&#123;</span><br><span class="line"></span><br><span class="line">           swap(arr,x,y);&#125;&#125;&#125;</span><br><span class="line"></span><br><span class="line">冒泡排序:相邻两个元素以此比较，符合条件就调换顺序。第一次内循环后，最值出现在未角标位置</span><br><span class="line">for(int x=0;x&lt;arr.length-1; x++)&#123;                                                         </span><br><span class="line">    for(int y=0; y&lt;arr.length-x-1; y++)&#123;//-x:让每一次比较的元素减少，-1：避免角标越界。</span><br><span class="line">        if(arr[y]&lt;arr[y+1])&#123;</span><br><span class="line">            swap(arr,y,y+1);&#125;&#125;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">    折半查找</span><br><span class="line">public static inthalfSearch (int[] arr,int key)&#123;</span><br><span class="line"></span><br><span class="line">int min = 0,max =arr.length-1,mid;</span><br><span class="line"></span><br><span class="line">while(min&lt;=max)&#123;</span><br><span class="line"></span><br><span class="line">  mid = (max+min)/2;</span><br><span class="line"></span><br><span class="line">  if(key&gt;arr[mid])</span><br><span class="line"></span><br><span class="line">    min = mid + 1;</span><br><span class="line"></span><br><span class="line">    else if(key&lt;arr[mid])</span><br><span class="line"></span><br><span class="line">      max = mid - 1;</span><br><span class="line"></span><br><span class="line">        else</span><br><span class="line"></span><br><span class="line">          return mid;</span><br><span class="line">&#125;  </span><br><span class="line">return -1;&#125;&#125;</span><br><span class="line">/*如果要想实现在一个有序的数组里面加入一个元素，要求加入后数组里面的元素任然有有序的。</span><br><span class="line">此处应该改成return min*/</span><br></pre></td></tr></table></figure>
+<h5 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">格式1：int[][] arr = new int[3][2]</span><br><span class="line"></span><br><span class="line">  定义了名称为arr的二维数组</span><br><span class="line"></span><br><span class="line">  二维数组中有3个一维数组，每一个一维数组中有2个元素</span><br><span class="line"></span><br><span class="line">  一维数组的名称分别为arr[0],arr[1], arr[2]</span><br><span class="line"></span><br><span class="line">  给第一个一维数组1脚标位赋值为78写法是：arr[0][1] = 78;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">格式2：int[][] arr = new int[3][];</span><br><span class="line"></span><br><span class="line">  二维数组中有3个一维数组，每个一维数组都是默认初始化值null</span><br><span class="line"></span><br><span class="line">  可以对这个三个一维数组分别进行初始化：</span><br><span class="line"></span><br><span class="line">arr[0] = new int[3];</span><br><span class="line"></span><br><span class="line">arr[1] = new int[1];</span><br><span class="line"></span><br><span class="line">arr[2] = new int[2];</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">格式3：int[][] arr = &#123;&#123;3,8,2&#125;,&#123;2,7&#125;,&#123;9,0,1,6&#125;&#125;;</span><br><span class="line"></span><br><span class="line">二维数组中的有三个一维数组，每一个一维数组中具体元素也都已初始化</span><br><span class="line"></span><br><span class="line">第一个一维数组arr[0] = &#123;3,8,2&#125;;</span><br><span class="line"></span><br><span class="line">第二个一维数组arr[1] = &#123;2,7&#125;;</span><br><span class="line"></span><br><span class="line">第三个一维数组arr[2] = &#123;9,0,1,6&#125;;</span><br><span class="line"></span><br><span class="line">第三个一维数组的长度表示方式：arr[2].length;</span><br><span class="line"></span><br><span class="line">多维数组：由一级级的一维数组组成，是数组的数组。</span><br><span class="line">除了最后一层数组由数组元素组成，其余的数组都是数组变量的数组。</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="15、关键字this，static，abstract，final"><a href="#15、关键字this，static，abstract，final" class="headerlink" title="15、关键字this，static，abstract，final"></a>15、关键字this，static，abstract，final</h4><ul>
+<li><p>this</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">代表它所在函数所属对象的引用。简单说，哪个对象在调用this所在的函数，this就代表哪个对象。</span><br><span class="line">super与this的用法几乎一致，this是本类对象的引用，super是父类对象的引用</span><br><span class="line"></span><br><span class="line">用法：</span><br><span class="line">    当定义类中功能（函数）时，该函数内部要用到调用该函数的对象时，这时用this来表示这个对象。</span><br><span class="line">    但凡本类功能内部使用了本类对象，都用this表示。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>static</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">是一个修饰符，用于修饰成员(成员变量，成员函数)，把对象的共享数据存储在单独的空间。</span><br><span class="line">当成员被静态修饰后，就有两种调用方式：被对象调用和直接被类名调用。</span><br><span class="line"></span><br><span class="line">特点：</span><br><span class="line">    随着类的加载而加载，随着类的消失而消失。说明它的生命周期最长。</span><br><span class="line"></span><br><span class="line">    优先于的对象存在。明确一点：静态是先存在。对象是后存在的。</span><br><span class="line"></span><br><span class="line">    修饰后被所有对象所共享。</span><br><span class="line"></span><br><span class="line">    可以直接被类名所调用。</span><br><span class="line"></span><br><span class="line">何时定义静态变量：</span><br><span class="line">    当对象中出现共享数据，该数据被静态所修饰存在于方法区，对象中的特有数据要定义成非静态存在于堆内存中。</span><br><span class="line"></span><br><span class="line">何时定义静态函数：</span><br><span class="line">    当功能内部没有访问到非静态数据(对象的特有数据)，该功能可以定义成静态的。</span><br><span class="line"></span><br><span class="line">注：</span><br><span class="line">    主函数是静态的。</span><br><span class="line"></span><br><span class="line">    静态方法中不可以定义this，super关键字。因为静态优先于对象存在。</span><br><span class="line"></span><br><span class="line">    静态方法只能访问静态成员。非静态方法既可以访问静态也可以访问非静态。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>abstract</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">抽象。当多个类中出现相同功能定义不同功能主体时，可以进行向上抽取。这时，只抽取功能定义，而不抽取功能主体。</span><br><span class="line"></span><br><span class="line">（1）抽象类：</span><br><span class="line"></span><br><span class="line">  抽象方法和抽象类都必须被abstract关键字修饰，抽象方法一定在抽象类中。</span><br><span class="line"></span><br><span class="line">  抽象类不可以用new创建对象。</span><br><span class="line">  抽象类中的抽象方法要被使用，必须由子类复写全部的抽象方法后才能建立子类对象进行调用。</span><br><span class="line">  如果子类只覆盖了部分抽象方法，那么该子类还是一个抽象类。</span><br><span class="line">  因为该子类继承了抽象类的抽象方法。</span><br><span class="line"></span><br><span class="line">  抽象类只是比一般类多了抽象方法，它可定义非抽象方法，也可不定义抽象方法。</span><br><span class="line"></span><br><span class="line">  需要指出的是，抽象类也是有构造函数的。</span><br><span class="line"></span><br><span class="line">（2）abstract关键字不能和哪些关键字共存？</span><br><span class="line"></span><br><span class="line">final：被final修饰后，不能被子类继承，无法重写。</span><br><span class="line"></span><br><span class="line">private: 私有后，不能被子类继承，无法重写。</span><br><span class="line"></span><br><span class="line">static：如果static可以修饰抽象方法，那么连对象都省了，直接类名调用就可以了。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>-final</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">final作为一个修饰符，可以修饰变量，方法（函数），类</span><br><span class="line"></span><br><span class="line">（1）修饰变量：是一个常量只能赋值一次，既可以修饰成员变量，也可以修饰局部变量</span><br><span class="line"></span><br><span class="line">（2）修饰方法：不可以被子类重写但是可以重载</span><br><span class="line"></span><br><span class="line">（3）修饰类：不能被继承</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h4 id="16、接口"><a href="#16、接口" class="headerlink" title="16、接口"></a>16、接口</h4><p>当抽象类中的方法都是抽象方法时，该类可以通过接口的形式来表示。它是对外暴露的规则，是对程序的扩展。</p>
+<p>用interface定义，用implement实现。</p>
+<p><code>（1）接口定义时，格式特点：</code></p>
+<p>  接口中常见定义：常量，抽象方法。</p>
+<p>  接口中的成员都有固定修饰符。</p>
+<p>  常量：publicstatic final</p>
+<p>  抽象方法：publicabstract</p>
+<p>注：接口中的成员都是public的，以上固定的格式可以省略，java虚拟机默认添加。</p>
+<p><code>（2）接口是不可以创建对象的，因为有抽象方法，需要被子类实现。子类对接口中的抽象方法全都覆盖后，子类才可以实例化。</code></p>
+<p><code>（3）区分关系:</code></p>
+<p>类与接口之间是实现关系，并且可以多实现</p>
+<p>接口与接口之间是继承关系，并且可以是多继承</p>
+<hr>
+<h4 id="17、Object类"><a href="#17、Object类" class="headerlink" title="17、Object类"></a>17、Object类</h4><p>该类定义的是所有对象都具备的功能，因此Object类中的方法可以被重载、重写。</p>
+<p>Java中所有类的父类，是他们的爸爸。</p>
+<ul>
+<li><p>Object方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">toString()：返回该对象的字符串表示</span><br><span class="line"></span><br><span class="line">equals()：用于比较对象的引用指向的是否是同一个对象（比较的是地址）</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>比较对象的两种方法：</p>
+</li>
+</ul>
+<p>hashcode()</p>
+<p>根据对象所在的内存返回一个能够唯一代表这个对象的int值。<br>两对象相等，hashcode( )返回值相等；两对象不相等，hashcode( )返回值不相等。</p>
+<p>equals()</p>
+<p>比较的是地址，而不是两个对象是否逻辑相等。</p>
+<p><code>注：通常通过覆盖hashcode( )和equals( )方法类达到比较自定义对象的目的</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">public class Student()&#123;</span><br><span class="line">    private String name;</span><br><span class="line">    private int age;</span><br><span class="line">    public student(name,age)&#123;</span><br><span class="line">    this.name=name;</span><br><span class="line">    this.age=age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public bealoon equals(objectobj)&#123;</span><br><span class="line">       if(!(obj instanceof Student))</span><br><span class="line">         return false;</span><br><span class="line">       Student s=(Student)obj;</span><br><span class="line">       return (name.equals(s.name))&amp;&amp;(age==s.age);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public int hashCode()&#123;</span><br><span class="line">       final int prime=31;</span><br><span class="line">       int result = 1;</span><br><span class="line">       result = result * prime + ((name==null)? 0 : name.hashCode());</span><br><span class="line">       result = result * prime +age</span><br><span class="line">       return result;</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="18、包"><a href="#18、包" class="headerlink" title="18、包"></a>18、包</h4><ul>
+<li>定义</li>
+</ul>
+<p>用来对类文件进行分类管理，给类提供多层命名空间。</p>
+<p>包名必须是合法的标识符名，写在程序文件的第一行。</p>
+<p>如果一个源文件不是在default package中，<br>那么此源文件的第一有效行必须是能正确表示源文件所在包的package语句。</p>
+<hr>
+<p>包的全限定名：从源代码根目录src开始，包名之间有点号隔开。</p>
+<p>类的全限定名：类所在的包的全限定名.类名。</p>
+<p>使用包中的类时都是要使用类的全限定名，包括创建类的对象等。<br>但是使用类的引用则与全限定名没有任何关系。Carcar=new Common.car();</p>
+<p>包与包之间的访问时：被访问的包中类的权限必须是public；<br>类中的成员权限必须是public或者protected。<br>protected是为其他包中的子类提供的一种权限             </p>
+<p>一个类使用同一个包中的其他类时，可以省略类的全限定名。</p>
+<p>编译：编译包中的类时，需要进入源代码的根目录，然后根据类源文件的路径和源文件名进行编译，否则编译失败。</p>
+<hr>
+<ul>
+<li><p>import语句：</p>
+<p>两种语法格式：</p>
+<pre><code>引入一个类：import 类全限定名;
+
+引入一个包中的所有类：import 包全限定名.*;  不包含子包中的类！
+</code></pre></li>
+</ul>
+<p>一个程序文件中只有一个package，但可以有多个import。</p>
+<p>用来导入包中的类，而不是导入包中的包。</p>
+<p>Java编译器默认引入java.lang中的所有类。</p>
+<p>当类中的源码中使用了没有全限定名的其他类，Java编译器寻找这个类的顺序规则：使用第1种格式引入的类；使用与这个类中同一个包中的类和使用第2种引入的类。</p>
+<ul>
+<li>jar包</li>
+</ul>
+<p>Java的压缩包。方便项目的携带和使用，只要在classpath设置jar路径即可</p>
+<p>  数据库驱动，SSH框架等都是以jar包体现的。</p>
+<p>  通过jar.exe工具对jar的操作：</p>
+<p>创建jar包<br>jar -cvf mypack.jar packa packb</p>
+<p>查看jar包<br>jar -tvf mypack.jar [&gt;定向文件]</p>
+<p>解压缩<br>jar -xvf mypack.jar</p>
+<p>自定义jar包的清单文件<br>jar –cvfm mypack.jar mf.txt packa packb</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src>
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        <li title="0" data-url="http://link.hhtjim.com/163/5146554.mp3"></li>
+                    
+                        <li title="1" data-url="http://link.hhtjim.com/qq/001faIUs4M2zna.mp3"></li>
+                    
+                </ul>
+            
+        </div>
+        
+    <div id="gitalk-container" class="comment link" data-ae="false" data-ci data-cs data-r data-o data-a data-d="false">查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>

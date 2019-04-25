@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans" class="loading">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CenterOS配置静态IP地址 - Wells Min</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="WellsMin,"> 
+    <meta name="description" content="注：菜鸟日记，记录学习所得的知识点及任务进度记录
+分享学习经验，记录小结
+本文参考各路大神文档笔记，记录学习
+CenterOS 7 配置静态IP(CSDN)
+
+使用VMware虚拟机创建系统完成之后,"> 
+    <meta name="author" content="Wells Min"> 
+    <link rel="alternative" href="atom.xml" title="Wells Min" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">Wells Min</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" data-url="http://yoursite.com"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">CenterOS配置静态IP地址</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class="main">
+        <h1 class="title">CenterOS配置静态IP地址</h1>
+        <div class="stuff">
+            <span>二月 20, 2019</span>
+            
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/CenterOS/">CenterOS</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p><code>注：菜鸟日记，记录学习所得的知识点及任务进度记录</code></p>
+<p><code>分享学习经验，记录小结</code></p>
+<p><code>本文参考各路大神文档笔记，记录学习</code></p>
+<p><a href="https://blog.csdn.net/cai454692590/article/details/85268786" target="_blank" rel="noopener">CenterOS 7 配置静态IP(CSDN)</a></p>
+<hr>
+<p><code>使用VMware虚拟机创建系统完成之后系统IP需要手动配置,本文作用是为了方便练习Redis从单机到集群时，作为集群需要使用至少3台以上得Redis服务器，使用VMware创建CenterOS时每次都需要进行IP配置以及Redis安装，所以特此记录</code></p>
+<h2 id="VMware虚拟机安装CenterOS"><a href="#VMware虚拟机安装CenterOS" class="headerlink" title="VMware虚拟机安装CenterOS"></a>VMware虚拟机安装CenterOS</h2><p> <code>废话：VMware里新建虚拟机，选择CenterOS系统得ISO镜像文件，无脑下一步自动安装。么有自个儿的文件服务器，所以贴个官网，有需则取，无需绕行</code>      </p>
+<p><a href="https://www.centos.org/download/" target="_blank" rel="noopener">Center OS 镜像下载</a></p>
+<p><a href="https://www.osyunwei.com/archives/10003.html" target="_blank" rel="noopener">手 动 安 装 参 考</a></p>
+<hr>
+<h2 id="CenterOS-7-配置静态IP"><a href="#CenterOS-7-配置静态IP" class="headerlink" title="CenterOS 7 配置静态IP"></a>CenterOS 7 配置静态IP</h2><ol>
+<li><p>使用命令查看当前系统使用IP：ifconfig</p>
+</li>
+<li><p>若当前使用的账号不是root账号，可能无法修改ip配置文件，所以需要使用命令切换当前账号为root账号(你得晓得root密码是啥)</p>
+<p> 切换root用户命令(登陆超级管理员)：su</p>
+<p> 输入密码 ( 输入时不显示输入内容，但确实输入了 )</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[redis1@localhost Desktop]$ su</span><br><span class="line">Password: </span><br><span class="line">[root@localhost Desktop]#</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>进入/etc/sysconfig/network-scripts/目录</p>
+<p> 切换目录：cd</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#cd /etc/sysconfig/network-scripts/</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看当前目录所有文件:ls</p>
+</li>
+</ol>
+<ol start="5">
+<li><p>修改ifcfg-eth0文件(需要超级管理员权限才能保存)</p>
+<p> 修改某文件：vim ifcfg-eth0 </p>
+<p> 进入修改文件界面后，按 i 编辑文件</p>
+<p> 使用主机cmd，查看当前网络：arp /a</p>
+<p> 使用IP：192.168.29.86(局域网IP)</p>
+<p> Redis预留：192.168.29.87，192.168.29.88</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">BOOTPROTO=static         BOOTPROTO  配置成静态IP</span><br><span class="line">IPADDR=192.168.29.86     IPADDR     IP地址</span><br><span class="line">GATEWAY=192.168.29.1     GATEWAY    网关</span><br><span class="line">DNS1=192.168.29.1        DNS1       配置同上</span><br><span class="line">NETMASK=255.255.255.0    NETMASK    子网掩码</span><br></pre></td></tr></table></figure>
+<p> 按ESC，输入 :wq  保存退出</p>
+</li>
+<li><p>最后就是最有意义，最有价值，体验成果的时候</p>
+<p> 使用 <code>service network restart</code> 重启网络服务</p>
+<p> 或者使用 <code>reboot</code> 直接重启服务器</p>
+<p> 然后：<code>ping www.baidu.com</code></p>
+<p> 要是ping不通，那就完犊子了，重新去检查哪儿出问题了吧</p>
+<p> <code>ifconfig</code> 查看IP是否变更，重启服务没用就重启服务器，一遍不成再走一遍，再去查查对应文档挽救一下</p>
+</li>
+</ol>
+<h5 id="上述内容为正常的CenterOS7系统，ifconfig查看时显示的为eth0网卡信息的正常配置，若你得系统是eth0网卡的话，那么配置起来问题不大，一下就配的出来"><a href="#上述内容为正常的CenterOS7系统，ifconfig查看时显示的为eth0网卡信息的正常配置，若你得系统是eth0网卡的话，那么配置起来问题不大，一下就配的出来" class="headerlink" title="上述内容为正常的CenterOS7系统，ifconfig查看时显示的为eth0网卡信息的正常配置，若你得系统是eth0网卡的话，那么配置起来问题不大，一下就配的出来"></a><code>上述内容为正常的CenterOS7系统，ifconfig查看时显示的为eth0网卡信息的正常配置，若你得系统是eth0网卡的话，那么配置起来问题不大，一下就配的出来</code></h5><hr>
+<h5 id="但是作为一个菜鸟-通过VMware虚拟机简易安装的CenterOS-没有发现什么eth0配置文件-根本没地儿改-是另一个ifcfg-eno16777736的文件-还好配置文件一般都是ifcfg打头-应该有些小伙伴是一样得情况-那是网卡网络配置温江-而且在安装时没有去特意设定CenterOS网络的-安装之后默认没有开启网络配置"><a href="#但是作为一个菜鸟-通过VMware虚拟机简易安装的CenterOS-没有发现什么eth0配置文件-根本没地儿改-是另一个ifcfg-eno16777736的文件-还好配置文件一般都是ifcfg打头-应该有些小伙伴是一样得情况-那是网卡网络配置温江-而且在安装时没有去特意设定CenterOS网络的-安装之后默认没有开启网络配置" class="headerlink" title="但是作为一个菜鸟,通过VMware虚拟机简易安装的CenterOS,没有发现什么eth0配置文件,根本没地儿改,是另一个ifcfg-eno16777736的文件,还好配置文件一般都是ifcfg打头,应该有些小伙伴是一样得情况,那是网卡网络配置温江,而且在安装时没有去特意设定CenterOS网络的,安装之后默认没有开启网络配置"></a><code>但是作为一个菜鸟,通过VMware虚拟机简易安装的CenterOS,没有发现什么eth0配置文件,根本没地儿改,是另一个ifcfg-eno16777736的文件,还好配置文件一般都是ifcfg打头,应该有些小伙伴是一样得情况,那是网卡网络配置温江,而且在安装时没有去特意设定CenterOS网络的,安装之后默认没有开启网络配置</code></h5><h5 id="所以我在配置IP时，修改ifcfg-eno16777736文件"><a href="#所以我在配置IP时，修改ifcfg-eno16777736文件" class="headerlink" title="所以我在配置IP时，修改ifcfg-eno16777736文件"></a>所以我在配置IP时，修改ifcfg-eno16777736文件</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">BOOTPROTO=static         #IP获取改为静态获取(修改)</span><br><span class="line">ONBOOT=yes               #在文件底部,修改后才能在启服务时加载到配置信息(修改)    </span><br><span class="line"></span><br><span class="line">IPADDR=192.168.29.86        #静态IP(新增)</span><br><span class="line">GATEWAY=192.168.29.1        #默认网关(新增)</span><br><span class="line">NETMASK=255.255.255.0       #子网掩码(新增)</span><br><span class="line">DNS1=8.8.8.8                #DNS1配置(新增)</span><br><span class="line">DNS2=114.114.114.114        #DNS2配置(新增)</span><br></pre></td></tr></table></figure>
+<h4 id="完成后使用-service-network-restart-重启网络服务，就完事儿了"><a href="#完成后使用-service-network-restart-重启网络服务，就完事儿了" class="headerlink" title="完成后使用 service network restart 重启网络服务，就完事儿了"></a>完成后使用 <code>service network restart</code> 重启网络服务，就完事儿了</h4>
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src>
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        <li title="0" data-url="http://link.hhtjim.com/163/5146554.mp3"></li>
+                    
+                        <li title="1" data-url="http://link.hhtjim.com/qq/001faIUs4M2zna.mp3"></li>
+                    
+                </ul>
+            
+        </div>
+        
+    <div id="gitalk-container" class="comment link" data-ae="false" data-ci data-cs data-r data-o data-a data-d="false">查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>

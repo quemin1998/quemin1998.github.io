@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans" class="loading">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>JAVA循环Map - Wells Min</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="WellsMin,"> 
+    <meta name="description" content="注：菜鸟日记，记录学习所得的知识点及任务进度记录
+分享学习经验，记录小结
+本文参考各路大神文档笔记，记录学习
+
+将各方大佬对Map方法和循环各种使用方式及其特点的描述，特此记录
+LXQLCCC—JA,"> 
+    <meta name="author" content="Wells Min"> 
+    <link rel="alternative" href="atom.xml" title="Wells Min" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">Wells Min</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" data-url="http://yoursite.com"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">JAVA循环Map</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class="main">
+        <h1 class="title">JAVA循环Map</h1>
+        <div class="stuff">
+            <span>二月 24, 2019</span>
+            
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Map/">Map</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p><code>注：菜鸟日记，记录学习所得的知识点及任务进度记录</code></p>
+<p><code>分享学习经验，记录小结</code></p>
+<p><code>本文参考各路大神文档笔记，记录学习</code></p>
+<hr>
+<p><code>将各方大佬对Map方法和循环各种使用方式及其特点的描述，特此记录</code></p>
+<h2 id="LXQLCCC—JAVA中Map的常用方法整理"><a href="#LXQLCCC—JAVA中Map的常用方法整理" class="headerlink" title="LXQLCCC—JAVA中Map的常用方法整理"></a><a href="https://www.cnblogs.com/lwlxqlccc/p/6143887.html" target="_blank" rel="noopener">LXQLCCC—JAVA中Map的常用方法整理</a></h2><ol>
+<li><p>Map与Collection在集合框架中属并列存在</p>
+<ul>
+<li>Map存储的是键值对</li>
+<li><code>Map存储元素使用put方法，Collection使用add方法</code></li>
+<li>Map集合没有直接取出元素的方法，而是先转Set集合，再通过迭代获取元素</li>
+<li>Map集合中要保证Key键值的唯一性</li>
+<li>Collection 是单列集合，而Map是双列集合</li>
+</ul>
+</li>
+<li><p>Map中常见方法：</p>
+<ul>
+<li><p>添加：</p>
+<p>  V put(K key, V value)    （可以相同的key值，但是添加的value值会覆盖前面的，返回值是前一个，如果没有就返回null）</p>
+<p>  putAll(Map&lt;? extends K,? extends V&gt; m)  从指定映射中将所有映射关系复制到此映射中（可选操作）</p>
+</li>
+<li><p>删除：</p>
+<p>  remove() （删除关联对象，指定key对象）</p>
+<p>  clear() （清空集合对象）</p>
+</li>
+<li><p>获取：</p>
+<p>  V get(key) （可以用于判断键是否存在的情况。当指定的键不存在的时候，返回的是null）</p>
+</li>
+<li><p>判断：</p>
+<p>  boolean isEmpty() （长度为0返回true否则false）</p>
+<p>  boolean containsKey(Object key) （判断集合中是否包含指定的key）</p>
+<p>  boolean containsValue(Object value) （判断集合中是否包含指定的value）</p>
+</li>
+<li><p>长度：</p>
+<p>   Int size（）</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="JAVA中Map遍历的四种方式"><a href="#JAVA中Map遍历的四种方式" class="headerlink" title="JAVA中Map遍历的四种方式"></a>JAVA中Map遍历的四种方式</h2><p><code>注：在java中所有的map都实现了Map接口，因此所有的Map（如HashMap, TreeMap, LinkedHashMap, Hashtable等）都可以用以下的方式去遍历</code></p>
+<ol>
+<li><p><code>keySet values</code></p>
+<p> 如果只需要map的key或者value，用map的keySet或values方法无疑是最方便的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// KeySet 获取key</span><br><span class="line">public void testKeySet() </span><br><span class="line">&#123;</span><br><span class="line">    for (Integer key : map.keySet()) &#123;</span><br><span class="line">        System.out.println(key);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// values 获取value</span><br><span class="line">public void testValues() </span><br><span class="line">&#123;</span><br><span class="line">    for (Integer value : map.values()) &#123;</span><br><span class="line">        System.out.println(value);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>keySet get(key)</code></p>
+<p> 如果需要同时获取key和value，可以先获取key,然后再通过map的get(key)获取value</p>
+<p> 需要说明的是，该方法不是最优选择，一般不推荐使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// keySet get(key) 获取key and value</span><br><span class="line">public void testKeySetAndGetKey() </span><br><span class="line">&#123;</span><br><span class="line">    for (Integer key : map.keySet()) &#123;</span><br><span class="line">        System.out.println(key + &quot;:&quot; + map.get(key));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>entrySet</code></p>
+<p> 通过对map entrySet的遍历，也可以同时拿到key和value，一般情况下，性能上要优于上一种,这一种也是最常用的遍历方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// entrySet 获取key and value</span><br><span class="line">public void testEntry() </span><br><span class="line">&#123;</span><br><span class="line">    for (Map.Entry&lt;Integer, Integer&gt; entry : map.entrySet()) &#123;</span><br><span class="line">        System.out.println(entry.getKey() + &quot;:&quot; + entry.getValue());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>Iterator</code></p>
+<p>对于上面的几种foreach都可以用Iterator代替，其实foreach在java5中才被支持，foreach的写法看起来更简洁</p>
+<p>但Iterator也有其优势：在用foreach遍历map时，如果改变其大小，会报错，但如果只是删除元素，可以使用Iterator的remove方法删除元素</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// Iterator entrySet 获取key and value</span><br><span class="line">public void testIterator() </span><br><span class="line">&#123;</span><br><span class="line">  Iterator&lt;Map.Entry&lt;Integer, Integer&gt;&gt; it = map.entrySet().iterator();</span><br><span class="line">  while (it.hasNext()) </span><br><span class="line">  &#123;</span><br><span class="line">    Map.Entry&lt;Integer, Integer&gt; entry = it.next();</span><br><span class="line">    System.out.println(entry.getKey() + &quot;:&quot; + entry.getValue());</span><br><span class="line">    // it.remove(); 删除元素</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>Lambda</code></p>
+<p> java8提供了Lambda表达式支持，语法看起来更简洁，可以同时拿到key和value，不过，经测试，性能低于entrySet,所以更推荐用entrySet的方式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// Lambda 获取key and value</span><br><span class="line">public void testLambda() &#123;</span><br><span class="line">  map.forEach((key, value) -&gt; &#123;</span><br><span class="line">    System.out.println(key + &quot;:&quot; + value);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><ol>
+<li><p>key必须是唯一的，不唯一，那么后面的value会把前面的value覆盖</p>
+</li>
+<li><p>对于HashMap，key可以为空</p>
+</li>
+<li><p>value可以不为空，也可以为空</p>
+</li>
+<li><p>HashTable的key和value不能为空</p>
+</li>
+<li><p>properties的key和value必须为String类型的</p>
+</li>
+</ol>
+<h2 id="简单的性能测试"><a href="#简单的性能测试" class="headerlink" title="简单的性能测试"></a>简单的性能测试</h2><p>用10万条数据，做了一个简单性能测试，数据类型为Integer，map实现选取HashMap</p>
+<p>测试结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">type               time(ms)</span><br><span class="line"></span><br><span class="line">KeySet：             392</span><br><span class="line">Values：             320</span><br><span class="line">keySet get(key)：    552</span><br><span class="line">entrySet：           465</span><br><span class="line">entrySet Iterator：  508</span><br><span class="line">Lambda：             536</span><br></pre></td></tr></table></figure>
+<p>需要说明的是，map存储的数据类型，map的大小，以及map的不同实现方式都会影响遍历的性能，所以该测试结果仅供参考</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li><p>如果只是获取key，或者value，推荐使用keySet或者values方式</p>
+</li>
+<li><p>如果同时需要key和value推荐使用entrySet</p>
+</li>
+<li><p>如果需要在遍历过程中删除元素推荐使用Iterator</p>
+</li>
+<li><p>如果需要在遍历过程中增加元素，可以新建一个临时map存放新增的元素，等遍历完毕，再把临时map放到原来的map中</p>
+</li>
+</ul>
+<p>参考：</p>
+<p><a href="https://www.cnblogs.com/zhaoguhong/p/7074597.html?utm_source=itdadao&amp;utm_medium=referral" target="_blank" rel="noopener">赵孤鸿—谈谈java中遍历Map的几种方法</a></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src>
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        <li title="0" data-url="http://link.hhtjim.com/163/5146554.mp3"></li>
+                    
+                        <li title="1" data-url="http://link.hhtjim.com/qq/001faIUs4M2zna.mp3"></li>
+                    
+                </ul>
+            
+        </div>
+        
+    <div id="gitalk-container" class="comment link" data-ae="false" data-ci data-cs data-r data-o data-a data-d="false">查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>

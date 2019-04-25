@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans" class="loading">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>循环List删除指定元素 - Wells Min</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="WellsMin,"> 
+    <meta name="description" content="删除List中最后一个元素12345###   list的remove方法删除的是指定的index，###   index的值从0开始所以删除最后一个元素通过###   list.size()-1#,"> 
+    <meta name="author" content="Wells Min"> 
+    <link rel="alternative" href="atom.xml" title="Wells Min" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">Wells Min</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" data-url="http://yoursite.com"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">循环List删除指定元素</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class="main">
+        <h1 class="title">循环List删除指定元素</h1>
+        <div class="stuff">
+            <span>十月 17, 2018</span>
+            
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/JAVA基础/">JAVA基础</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h2 id="删除List中最后一个元素"><a href="#删除List中最后一个元素" class="headerlink" title="删除List中最后一个元素"></a><a href>删除List中最后一个元素</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">###   list的remove方法删除的是指定的index，</span><br><span class="line">###   index的值从0开始所以删除最后一个元素通过</span><br><span class="line">###   list.size()-1</span><br><span class="line">###   获取最后一个元素的index值</span><br><span class="line">###   list.remove(list.size() - 1);</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="1、for循环遍历List"><a href="#1、for循环遍历List" class="headerlink" title="1、for循环遍历List"></a><a href>1、for循环遍历List</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">for(int i=0;i&lt;list.size();i++)&#123;</span><br><span class="line">    if(list.get(i).equals(&quot;wells&quot;))</span><br><span class="line">        list.remove(i);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">    for循环中使用这种方式删除元素存在问题</span><br><span class="line">    在第一个需要删除的元素被删除时，List的大小直接发生变化</span><br><span class="line">    导致List中的索引也直接发生变化</span><br><span class="line">    所以会导致你在遍历时会漏掉某些元素</span><br><span class="line">    比如当你删除第一个元素后，继续根据索引访问第二个元素</span><br><span class="line">    但是因为你删除了第一个元素的关系，后面的元素都往前移动了一位</span><br><span class="line">    所以实际访问的是第三个元素。</span><br><span class="line">    因此，该方式可以用在删除特定的一位元素上</span><br><span class="line">    但不适用于循环删除多个特定的元素</span><br><span class="line"></span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="2、增强for循环"><a href="#2、增强for循环" class="headerlink" title="2、增强for循环"></a><a href>2、增强for循环</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">for(String x:list)&#123;</span><br><span class="line">    if(x.equals(&quot;del&quot;))</span><br><span class="line">        list.remove(x);</span><br><span class="line">        break;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">    这种方式的问题在于，删除元素后继续循环会报错误信息</span><br><span class="line">    ConcurrentModificationException</span><br><span class="line">    因为元素在使用的时候发生了并发的修改，导致异常抛出。</span><br><span class="line">    但是删除完毕马上使用break跳出，则不会触发报错。</span><br><span class="line"></span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; list = new CopyOnWriteArrayList&lt;&gt;();</span><br><span class="line">for (int i = 0; i &lt; 5; i++)</span><br><span class="line">    list.add(i);</span><br><span class="line">// list &#123;0, 1, 2, 3, 4&#125;</span><br><span class="line">for (Integer num : list) &#123;</span><br><span class="line">    // index and number</span><br><span class="line">    System.out.print(num);</span><br><span class="line">    if (num % 2 == 0) &#123;</span><br><span class="line">        list.remove(num);</span><br><span class="line">        System.out.print(&quot;delete&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println();</span><br><span class="line">&#125;</span><br><span class="line">/**</span><br><span class="line">    与ArrayList遍历删除时情况不同，CopyOnWriteArrayList是允许使用增强型for进行循环遍历删除的</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="3、Iterator迭代器遍历"><a href="#3、Iterator迭代器遍历" class="headerlink" title="3、Iterator迭代器遍历"></a><a href>3、Iterator迭代器遍历</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Iterator&lt;String&gt; it = list.iterator();</span><br><span class="line">while(it.hasNext())&#123;</span><br><span class="line">    String x = it.next();</span><br><span class="line">    if(x.equals(&quot;del&quot;))&#123;</span><br><span class="line">        it.remove();</span><br><span class="line">        break;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">    这种方式可以正常的循环及删除。需要注意的是，要使用iterator的remove方法</span><br><span class="line">    如果用list的remove方法同样会报上面提到的</span><br><span class="line">    ConcurrentModificationException错误。</span><br><span class="line"></span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; list = new CopyOnWriteArrayList&lt;&gt;();</span><br><span class="line">for (int i = 0; i &lt; 5; i++)</span><br><span class="line">    list.add(i);</span><br><span class="line">// list &#123;0, 1, 2, 3, 4&#125;</span><br><span class="line">Iterator&lt;Integer&gt; it = list.iterator();</span><br><span class="line">while (it.hasNext()) &#123;</span><br><span class="line">    // index and number</span><br><span class="line">    int num = it.next();</span><br><span class="line">    System.out.print(num);</span><br><span class="line">    if (num % 2 == 0) &#123;</span><br><span class="line">        it.remove();</span><br><span class="line">        System.out.print(&quot; delete&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println();</span><br><span class="line">&#125;</span><br><span class="line">/**</span><br><span class="line">    与ArrayList不同，由于CopyOnWriteArrayList的iterator是对其List的一个“快照”</span><br><span class="line">    因此是不可改变的，所以无法使用iterator遍历删除。</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">注：</span><br><span class="line">    （1）循环删除list中特定一个元素的，可以使用三种方式中的任意一种，但在使用中要注意上面分析的各个问题。</span><br><span class="line">    （2）循环删除list中多个元素的，应该使用迭代器iterator方式。</span><br><span class="line">    （3）使用ArrayList时，我们可以使用iterator实现遍历删除；</span><br><span class="line">    而当我们使用CopyOnWriteArrayList时，我们直接使用增强型for循环遍历删除即可</span><br><span class="line">    此时使用iterator遍历删除反而会出现问题</span><br></pre></td></tr></table></figure>
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src>
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        <li title="0" data-url="http://link.hhtjim.com/163/5146554.mp3"></li>
+                    
+                        <li title="1" data-url="http://link.hhtjim.com/qq/001faIUs4M2zna.mp3"></li>
+                    
+                </ul>
+            
+        </div>
+        
+    <div id="gitalk-container" class="comment link" data-ae="false" data-ci data-cs data-r data-o data-a data-d="false">查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>

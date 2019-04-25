@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans" class="loading">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>FreeCodeCamp中文社区菜鸟进军日记181124 - Wells Min</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="WellsMin,"> 
+    <meta name="description" content="注：菜鸟学习日记，记录从FreeCodeCamp任务中学习所得的知识点及任务进度记录
+分享学习经验，记录小结
+HTML5 AND CSS(31-45)
+!FreeCodeCamp编码挑战! Add ,"> 
+    <meta name="author" content="Wells Min"> 
+    <link rel="alternative" href="atom.xml" title="Wells Min" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">Wells Min</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" data-url="http://yoursite.com"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">FreeCodeCamp中文社区菜鸟进军日记181124</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class="main">
+        <h1 class="title">FreeCodeCamp中文社区菜鸟进军日记181124</h1>
+        <div class="stuff">
+            <span>十一月 24, 2018</span>
+            
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/FreeCodeCamp/">FreeCodeCamp</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p><code>注：菜鸟学习日记，记录从</code><a href="https://www.freecodecamp.cn/" target="_blank" rel="noopener">FreeCodeCamp</a><code>任务中学习所得的知识点及任务进度记录</code></p>
+<p><code>分享学习经验，记录小结</code></p>
+<h1 id="HTML5-AND-CSS-31-45"><a href="#HTML5-AND-CSS-31-45" class="headerlink" title="HTML5 AND CSS(31-45)"></a>HTML5 AND CSS(31-45)</h1><ol start="31">
+<li><code>!FreeCodeCamp编码挑战!</code> <a href="https://www.freecodecamp.cn/challenges/add-a-submit-button-to-a-form" target="_blank" rel="noopener">Add a Submit Button to a Form</a></li>
+</ol>
+<ul>
+<li><p>知 识 点 ：</p>
+<p>  form添加一个submit(提交)按钮，点击这个按钮，表单中的数据将会被发送到你通过action属性指定的地址上</p>
+<p>  submit按钮的例子：</p>
+<p>  <code>&lt;button type=&quot;submit&quot;&gt;this button submits the form&lt;/button&gt;</code></p>
+</li>
+<li><p>任 务 ： </p>
+<p>  给<code>form</code>元素添加一个<code>type</code>为<code>submit</code>的提交按钮，用<code>&quot;Submit&quot;</code>作按钮文本</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">&lt;link href=&quot;https://fonts.gdgdocs.org/css?family=Lobster&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">.red-text &#123;</span><br><span class="line">    color: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">h2 &#123;</span><br><span class="line">    font-family: Lobster, Monospace;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">p &#123;</span><br><span class="line">    font-size: 16px;</span><br><span class="line">    font-family: Monospace;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.thick-green-border &#123;</span><br><span class="line">    border-color: green;</span><br><span class="line">    border-width: 10px;</span><br><span class="line">    border-style: solid;</span><br><span class="line">    border-radius: 50%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.smaller-image &#123;</span><br><span class="line">    width: 100px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;h2 class=&quot;red-text&quot;&gt;CatPhotoApp&lt;/h2&gt;</span><br><span class="line"></span><br><span class="line">&lt;p&gt;Click here for &lt;a href=&quot;#&quot;&gt;cat photos&lt;/a&gt;.&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;a href=&quot;#&quot;&gt;&lt;img class=&quot;smaller-image thick-green-border&quot; </span><br><span class="line">alt=&quot;A cute orange cat lying on its back&quot; </span><br><span class="line">src=&quot;/images/relaxing-cat.jpg&quot;&gt;&lt;/a&gt;</span><br><span class="line"></span><br><span class="line">&lt;p&gt;Things cats love:&lt;/p&gt;</span><br><span class="line">&lt;ul&gt;</span><br><span class="line">&lt;li&gt;cat nip&lt;/li&gt;</span><br><span class="line">&lt;li&gt;laser pointers&lt;/li&gt;</span><br><span class="line">&lt;li&gt;lasagna&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line">&lt;p&gt;Top 3 things cats hate:&lt;/p&gt;</span><br><span class="line">&lt;ol&gt;</span><br><span class="line">&lt;li&gt;flea treatment&lt;/li&gt;</span><br><span class="line">&lt;li&gt;thunder&lt;/li&gt;</span><br><span class="line">&lt;li&gt;other cats&lt;/li&gt;</span><br><span class="line">&lt;/ol&gt;</span><br><span class="line">&lt;form action=&quot;/submit-cat-photo&quot;&gt;</span><br><span class="line">&lt;input type=&quot;text&quot; placeholder=&quot;cat photo URL&quot;&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通 关 代 码 ：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">   &lt;link href=&quot;https://fonts.gdgdocs.org/css?family=Lobster&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">.red-text &#123;</span><br><span class="line">    color: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">h2 &#123;</span><br><span class="line">    font-family: Lobster, Monospace;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">p &#123;</span><br><span class="line">    font-size: 16px;</span><br><span class="line">    font-family: Monospace;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.thick-green-border &#123;</span><br><span class="line">    border-color: green;</span><br><span class="line">    border-width: 10px;</span><br><span class="line">    border-style: solid;</span><br><span class="line">    border-radius: 50%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.smaller-image &#123;</span><br><span class="line">    width: 100px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;h2 class=&quot;red-text&quot;&gt;CatPhotoApp&lt;/h2&gt;</span><br><span class="line"></span><br><span class="line">&lt;p&gt;Click here for &lt;a href=&quot;#&quot;&gt;cat photos&lt;/a&gt;.&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;a href=&quot;#&quot;&gt;&lt;img class=&quot;smaller-image thick-green-border&quot; </span><br><span class="line">alt=&quot;A cute orange cat lying on its back&quot; </span><br><span class="line">src=&quot;/images/relaxing-cat.jpg&quot;&gt;&lt;/a&gt;</span><br><span class="line"></span><br><span class="line">&lt;p&gt;Things cats love:&lt;/p&gt;</span><br><span class="line">&lt;ul&gt;</span><br><span class="line">&lt;li&gt;cat nip&lt;/li&gt;</span><br><span class="line">&lt;li&gt;laser pointers&lt;/li&gt;</span><br><span class="line">&lt;li&gt;lasagna&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line">&lt;p&gt;Top 3 things cats hate:&lt;/p&gt;</span><br><span class="line">&lt;ol&gt;</span><br><span class="line">&lt;li&gt;flea treatment&lt;/li&gt;</span><br><span class="line">&lt;li&gt;thunder&lt;/li&gt;</span><br><span class="line">&lt;li&gt;other cats&lt;/li&gt;</span><br><span class="line">&lt;/ol&gt;</span><br><span class="line">&lt;form action=&quot;/submit-cat-photo&quot;&gt;</span><br><span class="line">&lt;input type=&quot;text&quot; placeholder=&quot;cat photo URL&quot;&gt;</span><br><span class="line">&lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<ol start="32">
+<li><code>!FreeCodeCamp编码挑战!</code> <a href="https://www.freecodecamp.cn/challenges/use-html5-to-require-a-field" target="_blank" rel="noopener">Use HTML5 to Require a Field</a></li>
+</ol>
+<ul>
+<li><p>知 识 点 ：</p>
+<p>  当设计表单时，你可以指定某些选项为必填项(required)，只有当用户填写了该选项后，用户才能够提交表单。</p>
+<p>  如果想把一个文本输入字段设置为必填项，在你的input元素中加上required属性就可以了</p>
+<p>  <code>&lt;input type=&quot;text&quot; required&gt;</code>   </p>
+</li>
+<li><p>任 务 ：</p>
+<p>  输入框添加required属性，不填写输入框就无法提交表单</p>
+<p>  试试输入框不填写任何文本，然后点击Submit提交表单，看看如何提示该字段为必填项。</p>
+<p>  <code>required</code>属性在<code>Safari</code>浏览器中不起作用，请用其他浏览器来学习，推荐使用<code>Chrome</code></p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">&lt;link href=&quot;https://fonts.gdgdocs.org/css?family=Lobster&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">.red-text &#123;</span><br><span class="line">    color: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">h2 &#123;</span><br><span class="line">    font-family: Lobster, Monospace;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">p &#123;</span><br><span class="line">    font-size: 16px;</span><br><span class="line">    font-family: Monospace;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.thick-green-border &#123;</span><br><span class="line">    border-color: green;</span><br><span class="line">    border-width: 10px;</span><br><span class="line">    border-style: solid;</span><br><span class="line">    border-radius: 50%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.smaller-image &#123;</span><br><span class="line">    width: 100px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;h2 class=&quot;red-text&quot;&gt;CatPhotoApp&lt;/h2&gt;</span><br><span class="line"></span><br><span class="line">&lt;p&gt;Click here for &lt;a href=&quot;#&quot;&gt;cat photos&lt;/a&gt;.&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;a href=&quot;#&quot;&gt;&lt;img class=&quot;smaller-image thick-green-border&quot; </span><br><span class="line">alt=&quot;A cute orange cat lying on its back&quot; </span><br><span class="line">src=&quot;/images/relaxing-cat.jpg&quot;&gt;&lt;/a&gt;</span><br><span class="line"></span><br><span class="line">&lt;p&gt;Things cats love:&lt;/p&gt;</span><br><span class="line">&lt;ul&gt;</span><br><span class="line">&lt;li&gt;cat nip&lt;/li&gt;</span><br><span class="line">&lt;li&gt;laser pointers&lt;/li&gt;</span><br><span class="line">&lt;li&gt;lasagna&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line">&lt;p&gt;Top 3 things cats hate:&lt;/p&gt;</span><br><span class="line">&lt;ol&gt;</span><br><span class="line">&lt;li&gt;flea treatment&lt;/li&gt;</span><br><span class="line">&lt;li&gt;thunder&lt;/li&gt;</span><br><span class="line">&lt;li&gt;other cats&lt;/li&gt;</span><br><span class="line">&lt;/ol&gt;</span><br><span class="line">&lt;form action=&quot;/submit-cat-photo&quot;&gt;</span><br><span class="line">&lt;input type=&quot;text&quot; placeholder=&quot;cat photo URL&quot;&gt;</span><br><span class="line">&lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通 关 代 码 ：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">&lt;link href=&quot;https://fonts.gdgdocs.org/css?family=Lobster&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">.red-text &#123;</span><br><span class="line">    color: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">h2 &#123;</span><br><span class="line">    font-family: Lobster, Monospace;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">p &#123;</span><br><span class="line">    font-size: 16px;</span><br><span class="line">    font-family: Monospace;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.thick-green-border &#123;</span><br><span class="line">    border-color: green;</span><br><span class="line">    border-width: 10px;</span><br><span class="line">    border-style: solid;</span><br><span class="line">    border-radius: 50%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.smaller-image &#123;</span><br><span class="line">    width: 100px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;h2 class=&quot;red-text&quot;&gt;CatPhotoApp&lt;/h2&gt;</span><br><span class="line"></span><br><span class="line">&lt;p&gt;Click here for &lt;a href=&quot;#&quot;&gt;cat photos&lt;/a&gt;.&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;a href=&quot;#&quot;&gt;&lt;img class=&quot;smaller-image thick-green-border&quot; </span><br><span class="line">alt=&quot;A cute orange cat lying on its back&quot; </span><br><span class="line">src=&quot;/images/relaxing-cat.jpg&quot;&gt;&lt;/a&gt;</span><br><span class="line"></span><br><span class="line">&lt;p&gt;Things cats love:&lt;/p&gt;</span><br><span class="line">&lt;ul&gt;</span><br><span class="line">&lt;li&gt;cat nip&lt;/li&gt;</span><br><span class="line">&lt;li&gt;laser pointers&lt;/li&gt;</span><br><span class="line">&lt;li&gt;lasagna&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line">&lt;p&gt;Top 3 things cats hate:&lt;/p&gt;</span><br><span class="line">&lt;ol&gt;</span><br><span class="line">&lt;li&gt;flea treatment&lt;/li&gt;</span><br><span class="line">&lt;li&gt;thunder&lt;/li&gt;</span><br><span class="line">&lt;li&gt;other cats&lt;/li&gt;</span><br><span class="line">&lt;/ol&gt;</span><br><span class="line">&lt;form action=&quot;/submit-cat-photo&quot;&gt;</span><br><span class="line">&lt;input type=&quot;text&quot; required placeholder=&quot;cat photo URL&quot;&gt;</span><br><span class="line">&lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<ol start="33">
+<li><code>!FreeCodeCamp编码挑战!</code> <a href="https://www.freecodecamp.cn/challenges/create-a-set-of-radio-buttons" target="_blank" rel="noopener">Create a Set of Radio Buttons</a> <h2 id="SHUTDOWN"><a href="#SHUTDOWN" class="headerlink" title="SHUTDOWN"></a>SHUTDOWN</h2></li>
+</ol>
+<h2 id="过于冗余，重心放入重点学习，及记录"><a href="#过于冗余，重心放入重点学习，及记录" class="headerlink" title="过于冗余，重心放入重点学习，及记录"></a><code>过于冗余，重心放入重点学习，及记录</code></h2>
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src>
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        <li title="0" data-url="http://link.hhtjim.com/163/5146554.mp3"></li>
+                    
+                        <li title="1" data-url="http://link.hhtjim.com/qq/001faIUs4M2zna.mp3"></li>
+                    
+                </ul>
+            
+        </div>
+        
+    <div id="gitalk-container" class="comment link" data-ae="false" data-ci data-cs data-r data-o data-a data-d="false">查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>
