@@ -3,12 +3,210 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-       http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">	
-<url>
-<loc>http://www.quemin.top</loc>
-<priority>1.00</priority>
-<lastmod>2019-11-07</lastmod>
-<changefreq>weekly</changefreq>
-</url>
-</urlset>
+       http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+>
 
+<url>
+ <loc>https://www.quemin.top/2018/11/24/FreeCodeCamp中文社区菜鸟进军日记181124</loc>
+ <priority>0.3</priority>
+ <lastmod>2019-11-14</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://tableconvert.com</loc>
+ <priority>0.3</priority>
+ <lastmod>2019-11-14</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>http://www.bejson.com/</loc>
+ <priority>0.3</priority>
+ <lastmod>2019-11-14</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://www.lintcode.com/problem/</loc>
+ <priority>0.3</priority>
+ <lastmod>2019-11-14</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://www.quemin.top/2019/02/20/CenterOS配置IP190220</loc>
+ <priority>0.3</priority>
+ <lastmod>2019-11-14</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://www.quemin.top/tags</loc>
+ <priority>0.3</priority>
+ <lastmod>2019-11-14</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>http://www.144g.com/web-EaQlEml.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2019-11-14</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>http://hexo.io/</loc>
+ <priority>0.3</priority>
+ <lastmod>2019-11-14</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://github.com/Fechin</loc>
+ <priority>0.3</priority>
+ <lastmod>2019-11-14</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://www.freecodecamp.cn/</loc>
+ <priority>0.3</priority>
+ <lastmod>2019-11-14</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://www.quemin.top/2019/02/20/Redis从单机到集群190220</loc>
+ <priority>0.3</priority>
+ <lastmod>2019-11-14</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://www.quemin.top/page/2</loc>
+ <priority>0.3</priority>
+ <lastmod>2019-11-14</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://www.quemin.top/2019/03/01/JAVA事务详解</loc>
+ <priority>0.3</priority>
+ <lastmod>2019-11-14</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://c.runoob.com/</loc>
+ <priority>0.3</priority>
+ <lastmod>2019-11-14</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://www.quemin.top/2018/11/22/FreeCodeCamp中文社区菜鸟进军日记181122</loc>
+ <priority>0.3</priority>
+ <lastmod>2019-11-14</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>http://www.144g.com/tupian.php</loc>
+ <priority>0.3</priority>
+ <lastmod>2019-11-14</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>http://www.144g.com/yinyue.php</loc>
+ <priority>0.3</priority>
+ <lastmod>2019-11-14</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://github.com/Fechin/hexo-theme-diaspora</loc>
+ <priority>0.3</priority>
+ <lastmod>2019-11-14</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://www.quemin.top/2019/02/26/PostMan接口测试工具使用</loc>
+ <priority>0.3</priority>
+ <lastmod>2019-11-14</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://note.youdao.com/share/preview.html?id=5f1cb63c79ce48dc543421d3baae4612&amp;type=note&amp;fid=1178D2038BA74AD1890B50E292910CF9</loc>
+ <priority>0.3</priority>
+ <lastmod>2019-11-14</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://www.quemin.top/2018/11/21/JAVA面向对象</loc>
+ <priority>0.3</priority>
+ <lastmod>2019-11-14</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://www.quemin.top/</loc>
+ <priority>0.3</priority>
+ <lastmod>2019-11-14</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://www.cmd5.com/hash.aspx?s=000000</loc>
+ <priority>0.3</priority>
+ <lastmod>2019-11-14</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://www.quemin.top/2018/12/24/网易JAVA程序员</loc>
+ <priority>0.3</priority>
+ <lastmod>2019-11-14</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://www.quemin.top</loc>
+ <priority>0.3</priority>
+ <lastmod>2019-11-14</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://bccto.me/</loc>
+ <priority>0.3</priority>
+ <lastmod>2019-11-14</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://www.quemin.top/2019/02/24/JAVA循环Map</loc>
+ <priority>0.3</priority>
+ <lastmod>2019-11-14</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://timemail.net/</loc>
+ <priority>0.3</priority>
+ <lastmod>2019-11-14</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://www.quemin.top/2018/11/23/FreeCodeCamp中文社区菜鸟进军日记181123</loc>
+ <priority>0.3</priority>
+ <lastmod>2019-11-14</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+</urlset>
