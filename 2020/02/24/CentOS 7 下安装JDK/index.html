@@ -1,0 +1,290 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CentOS 7 下安装 JAVA-JDK - Wells Min</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="WellsMin,阙敏,个人博客,"> 
+    <meta name="description" content="注：菜鸟日记，记录学习所得的知识点及任务进度记录
+分享学习经验，记录小结
+本文参考各路大神文档笔记，记录学习
+
+环境搭建测试，特此记录
+CentOS 7 下安装 JAVA-JDK
+Linux上一般会,"> 
+    <meta name="author" content="Wells Min"> 
+    <link rel="alternative" href="atom.xml" title="Wells Min" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script> -->
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Wells Min</span>
+    <!--爱国-->
+    <!-- <script language="javascript" type="text/javascript" src="https://cdn.staticfile.org/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/firework.js"></script> -->
+
+    <!--爆炸特效-->
+    <canvas class="fireworks" style="position: fixed; left: 0px; top: 0px; z-index: 99999999; pointer-events: none; width: 1920px; height: 91px;" width="3840" height="182"></canvas>
+    <script type="text/javascript" src="/js/boom_anime.js"></script>
+    <script type="text/javascript" src="/js/boom_cursor.js"></script>
+
+    <!--爱心升天-->
+    <script type="text/javascript" src="/js/love.js"></script>
+    <!--鼠标跟随-->
+    <script type="text/javascript" src="/js/follow.js"></script>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" data-url="http://yoursite.com"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">CentOS 7 下安装 JAVA-JDK</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">CentOS 7 下安装 JAVA-JDK</h1>
+        <div class="stuff">
+            <span>二月 24, 2020</span>
+            
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/JAVA/">JAVA</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/环境搭建/">环境搭建</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p><code>注：菜鸟日记，记录学习所得的知识点及任务进度记录</code></p>
+<p><code>分享学习经验，记录小结</code></p>
+<p><code>本文参考各路大神文档笔记，记录学习</code></p>
+<hr>
+<p><code>环境搭建测试，特此记录</code></p>
+<h2 id="CentOS-7-下安装-JAVA-JDK"><a href="#CentOS-7-下安装-JAVA-JDK" class="headerlink" title="CentOS 7 下安装 JAVA-JDK"></a>CentOS 7 下安装 JAVA-JDK</h2><ul>
+<li><p>Linux上一般会安装Open JDK,关于OpenJDK和JDK的区别：</p>
+<p>  历史上的原因是，openjdk是jdk的开放原始码版本，以GPL协议的形式放出。在JDK7的时候，openjdk已经成为jdk7的主干开 发，sun jdk7是在openjdk7的基础上发布的，其大部分原始码都相同，只有少部分原始码被替换掉。使用JRL(JavaResearch License，Java研究授权协议)发布。 </p>
+<p>  至于openjdk6则更是有其复杂的一面，首先是openjdk6是jdk7的一个分支，并且尽量去除Java SE7的新特性，使其尽量的符合Java6的标准。 </p>
+<p>  关于JDK和OpenJDK的区别，可以归纳为以下几点:</p>
+<h3 id="一-授权协议的不同："><a href="#一-授权协议的不同：" class="headerlink" title="一.授权协议的不同："></a>一.授权协议的不同：</h3><p>  openjdk采用GPL V2协议放出，而JDK则采用JRL放出。两者协议虽然都是开放源代码的，但是在使用上的不同在于GPL V2允许在商业上使用，而JRL只允许个人研究使用。 </p>
+<h3 id="二-OpenJDK不包含Deployment（部署）功能："><a href="#二-OpenJDK不包含Deployment（部署）功能：" class="headerlink" title="二.OpenJDK不包含Deployment（部署）功能："></a>二.OpenJDK不包含Deployment（部署）功能：</h3><p>  部署的功能包括：Browser Plugin、Java Web Start、以及Java控制面板，这些功能在Openjdk中是找不到的。 </p>
+<h3 id="三-OpenJDK源代码不完整："><a href="#三-OpenJDK源代码不完整：" class="headerlink" title="三.OpenJDK源代码不完整："></a>三.OpenJDK源代码不完整：</h3><p>  这个很容易想到，在采用GPL协议的Openjdk中，sun jdk的一部分源代码因为产权的问题无法开放openjdk使用，其中最主要的部份就是JMX中的可选元件SNMP部份的代码。因此这些不能开放的源代码 将它作成plug，以供OpenJDK编译时使用，你也可以选择不要使用plug。而Icedtea则为这些不完整的部分开发了相同功能的源代码 (OpenJDK6)，促使OpenJDK更加完整。 </p>
+<h3 id="四-部分源代码用开源代码替换："><a href="#四-部分源代码用开源代码替换：" class="headerlink" title="四.部分源代码用开源代码替换："></a>四.部分源代码用开源代码替换：</h3><p>  由于产权的问题，很多产权不是SUN的源代码被替换成一些功能相同的开源代码，比如说字体栅格化引擎，使用Free Type代替。 </p>
+<h3 id="五-openjdk只包含最精简的JDK："><a href="#五-openjdk只包含最精简的JDK：" class="headerlink" title="五.openjdk只包含最精简的JDK："></a>五.openjdk只包含最精简的JDK：</h3><p>  OpenJDK不包含其他的软件包，比如Rhino Java DB JAXP……，并且可以分离的软件包也都是尽量的分离，但是这大多数都是自由软件，你可以自己下载加入。 </p>
+<h3 id="六-不能使用Java商标："><a href="#六-不能使用Java商标：" class="headerlink" title="六.不能使用Java商标："></a>六.不能使用Java商标：</h3><p>  这个很容易理解，在安装openjdk的机器上，输入“java -version”显示的是openjdk，但是如果是使用Icedtea补丁的openjdk，显示的是java。（未验证） </p>
+<p>  <code>在Java体系中，还是有很多不自由的成分，源代码的开发不够彻底，希望Oracle能够让JCP更自由开放一些，这也是所有Java社区所希望的。</code></p>
+<p>  转自：<a href="http://fgh2011.iteye.com/blog/1771649" target="_blank" rel="noopener">http://fgh2011.iteye.com/blog/1771649</a> </p>
+</li>
+</ul>
+<h2 id="一-卸载系统自带的OpenJDK以及相关的java文件"><a href="#一-卸载系统自带的OpenJDK以及相关的java文件" class="headerlink" title="一.卸载系统自带的OpenJDK以及相关的java文件"></a>一.卸载系统自带的OpenJDK以及相关的java文件</h2><p>1 在命令窗口输入：</p>
+<pre><code>java -version
+(java -v 无法查看)
+
+[wells@localhost Desktop]$ java -version
+java version &quot;1.7.0_51&quot;
+OpenJDK Runtime Environment (rhel-2.4.5.5.el7-x86_64 u51-b31)
+OpenJDK 64-Bit Server VM (build 24.51-b03, mixed mode)
+</code></pre><p>2 在命令窗口输入：</p>
+<pre><code>rpm -qa | grep java
+说明：rpm      管理套件   
+     -qa 　　  使用询问模式，查询所有套件
+     grep　　  查找文件里符合条件的字符串
+     java 　　 查找包含java字符串的文件 
+
+[wells@localhost Desktop]$ rpm -qa | grep java
+python-javapackages-3.4.1-5.el7.noarch                 （系统自带JAVA相关文件）
+javapackages-tools-3.4.1-5.el7.noarch                  （系统自带JAVA相关文件）
+java-1.7.0-openjdk-headless-1.7.0.51-2.4.5.5.el7.x86_64（系统自带JAVA相关文件-可删除）
+tzdata-java-2014b-1.el7.noarch                         （系统自带JAVA相关文件）
+java-1.7.0-openjdk-1.7.0.51-2.4.5.5.el7.x86_64         （系统自带JAVA相关文件-可删除）
+[wells@localhost Desktop]$ 
+</code></pre><p>3 在命令窗口输入：</p>
+<pre><code>rpm -e --nodeps java-1.7.0-openjdk-1.7.0.51-2.4.5.5.el7.x86_64
+rpm -e --nodeps java-1.7.0-openjdk-headless-1.7.0.51-2.4.5.5.el7.x86_64
+
+若出错，检查版本号是否一致，普通用户无权限，则使用root用户进行操作
+使用：su root 切换用户
+</code></pre><p>4 在命令窗口输入：</p>
+<pre><code>java -version 检查是否删除完毕
+
+[root@localhost Desktop]# java -version
+bash: /usr/bin/java: 没有那个文件或目录
+[root@localhost Desktop]# 
+</code></pre><h2 id="二-下载最新稳定JDK"><a href="#二-下载最新稳定JDK" class="headerlink" title="二.下载最新稳定JDK"></a>二.下载最新稳定JDK</h2><p>1 下载地址：</p>
+<ul>
+<li><p>当前最新版本下载地址：<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a></p>
+</li>
+<li><p>历史版本下载地址：　　<a href="http://www.oracle.com/technetwork/java/javase/archive-139210.html" target="_blank" rel="noopener">http://www.oracle.com/technetwork/java/javase/archive-139210.html</a>  </p>
+</li>
+<li><p>下载tar.gz结尾的jdk版本</p>
+</li>
+<li><p>将下载的文件放入/usr/local/java/文件夹下（文件夹中存在原先的java压缩包，注意区分）</p>
+</li>
+<li><p>将文件使用cp拷贝至自定义目录(使用root用户操作并提升压缩文件的操作权限)</p>
+<pre><code>cp jdk-8u144-linux-x64.tar.gz /usr/local/src/
+
+pwd     -查看当前目录
+ls -al  -查看当前目录文件及操作权限
+chmod 777 xxxx.tra.gz -提升文件操作权限
+</code></pre></li>
+</ul>
+<h2 id="三-将文件进行解压"><a href="#三-将文件进行解压" class="headerlink" title="三.将文件进行解压"></a>三.将文件进行解压</h2><pre><code>tar -zxvf jdk-8u144-linux-x64.tar.gz -解压文件
+
+rm -f jdk-8u144-linux-x64.tar.gz -解压完成后删除压缩包文件(已在/usr/local/java中备份)
+</code></pre><h2 id="四-配置JDK环境变量"><a href="#四-配置JDK环境变量" class="headerlink" title="四.配置JDK环境变量"></a>四.配置JDK环境变量</h2><p>编辑全局变量：</p>
+<pre><code>vim /etc/profile
+</code></pre><p>进入文本编辑状态下，光标走到文件最后一行，键盘按下：</p>
+<pre><code>i
+</code></pre><p>进入插入状态：</p>
+<p>在文本的最后一行粘贴如下：</p>
+<p>注意JAVA_HOME=/usr/java/jdk1.8.0_144  就是你自己的目录</p>
+<pre><code>#java environment
+export JAVA_HOME=/usr/java/jdk1.8.0_144
+export CLASSPATH=.:${JAVA_HOME}/jre/lib/rt.jar:${JAVA_HOME}/lib/dt.jar:${JAVA_HOME}/lib/tools.jar
+export PATH=$PATH:${JAVA_HOME}/bin
+</code></pre><p><code>注:CentOS6上面的是JAVAHOME，CentOS7是{JAVA_HOME}</code></p>
+<h2 id="五-验证环境是否生效-安装完成"><a href="#五-验证环境是否生效-安装完成" class="headerlink" title="五.验证环境是否生效-安装完成"></a>五.验证环境是否生效-安装完成</h2><p>让刚刚设置的环境变量生效，命令窗口输入：</p>
+<pre><code>source /etc/profile
+</code></pre><p>检验是否完成：</p>
+<pre><code>java -version
+</code></pre><p>若正常显示java版本信息则安装完成，若未找到指令等其他错误请检查流程是否出错/环境配置路径是否填写错误</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/5146554.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/qq/001faIUs4M2zna.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci='a409d416258aef2d0b0b'
+        data-cs='6b56e8dec450199617cd64c9a19104ef07d07aa3'
+        data-r='wellstalk'
+        data-o='quemin1998'
+        data-a='quemin1998'
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>
