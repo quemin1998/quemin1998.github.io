@@ -49,14 +49,16 @@
     <script type="text/javascript" src="/js/firework.js"></script> -->
 
     <!--爆炸特效-->
-    <canvas class="fireworks" style="position: fixed; left: 0px; top: 0px; z-index: 99999999; pointer-events: none; width: 1920px; height: 91px;" width="3840" height="182"></canvas>
+    <!-- <canvas class="fireworks" style="position: fixed; left: 0px; top: 0px; z-index: 99999999; pointer-events: none; width: 1920px; height: 91px;" width="3840" height="182"></canvas>
     <script type="text/javascript" src="/js/boom_anime.js"></script>
-    <script type="text/javascript" src="/js/boom_cursor.js"></script>
+    <script type="text/javascript" src="/js/boom_cursor.js"></script> -->
 
     <!--爱心升天-->
-    <script type="text/javascript" src="/js/love.js"></script>
+    <!-- <script type="text/javascript" src="/js/love.js"></script> -->
     <!--鼠标跟随-->
-    <script type="text/javascript" src="/js/follow.js"></script>
+    <!-- <script type="text/javascript" src="/js/follow.js"></script> -->
+    <!--flash悬浮-->
+    <script type="text/javascript" src="/js/underFlash.js"></script>
     <div id="loader"></div>
     <div class="nav">
     <ul id="menu-menu" class="menu">
@@ -176,6 +178,14 @@
 </div>
 
     <div id="primary">
+        <body onscroll="myFunction()">
+        <div id="flag1" style="position: absolute;width: 50px;height: 50px;top: 0;">
+            <object type="application/x-shockwave-flash" style="outline:none;" data="https://cdn.abowman.com/widgets/dog/dog.swf?3?" width="300" height="225"><param name="movie" value="https://cdn.abowman.com/widgets/dog/dog.swf?3?"></param><param name="AllowScriptAccess" value="always"></param><param name="wmode" value="opaque"></param><param name="bgcolor" value="FFFFFF"/></object>
+        </div>
+        </body>
+        <!-- <div id="flag2" style="position: absolute;width: 50px;height: 50px;top: 0;">
+            <object type="application/x-shockwave-flash" style="outline:none;" data="https://cdn.abowman.com/widgets/fish/fish.swf?" width="300" height="200"><param name="movie" value="https://cdn.abowman.com/widgets/fish/fish.swf?"></param><param name="AllowScriptAccess" value="always"></param><param name="wmode" value="opaque"></param><param name="scale" value="noscale"/><param name="salign" value="tl"/></object>
+        </div> -->
         
 <div class="post">
     <a href="/2018/11/24/FreeCodeCamp中文社区菜鸟进军日记181124/" title="FreeCodeCamp中文社区菜鸟进军日记181124">
